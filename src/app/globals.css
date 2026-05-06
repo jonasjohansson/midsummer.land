@@ -778,7 +778,7 @@ body {
   .intro-lead { font-size: 20px; }
   .intro-call { font-size: 22px; }
 
-  .location-image { margin: 0 -18px 40px; border-radius: 26px; }
+  .location-image { margin: 0 -18px 40px; border-radius: 16px; }
 
   .card-border { padding: 36px 18px 30px; }
   .card-corner { width: 36px; height: 36px; }
@@ -815,5 +815,5 @@ body {
   .form-btn { width: 100%; }
 
   .foot { margin-top: 60px; }
-  .foot-image { margin: 0 -18px 30px; border-radius: 26px; }
+  .foot-image { margin: 0 -18px 30px; border-radius: 16px; }
 }
