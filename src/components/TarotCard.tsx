@@ -72,17 +72,28 @@ export default function TarotCard({ numeral, name, slotId, hint, image }: TarotC
     }
   }, []);
 
-  const onMouseEnter = useCallback(() => setHovering(true), []);
+  const enterTimer = useRef<ReturnType<typeof setTimeout>>();
+
+  const onMouseEnter = useCallback(() => {
+    setHovering(true);
+    const inner = innerRef.current;
+    if (inner) inner.style.transition = "transform 0.4s cubic-bezier(0.2, 0.6, 0.3, 1)";
+    clearTimeout(enterTimer.current);
+    enterTimer.current = setTimeout(() => {
+      if (innerRef.current) innerRef.current.style.transition = "none";
+    }, 400);
+  }, []);
 
   const onMouseLeave = useCallback(() => {
-    setHovering(false);
     const inner = innerRef.current;
     const shine = shineRef.current;
     if (inner) {
+      inner.style.transition = "transform 0.8s cubic-bezier(0.2, 0.6, 0.3, 1)";
       inner.style.transform =
         `rotateX(${idleRot.current.x}deg) rotateY(${idleRot.current.y}deg)`;
     }
     if (shine) shine.style.opacity = "0";
+    setTimeout(() => setHovering(false), 800);
   }, []);
 
   return (
