@@ -14,15 +14,18 @@ export default function Header() {
   return (
     <header className="hero">
       <div className="hero-img-wrap">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/assets/header-banner.jpg"
-          alt="Bangers' Arcana — sun and moon at twilight"
-          className="hero-img"
-          style={{
-            transform: `translateY(${scroll * 0.08}px)`,
-          }}
-        />
+        <picture>
+          <source media="(max-width: 720px)" srcSet="/assets/header-banner-mobile.jpg" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/assets/header-banner.jpg"
+            alt="Bangers' Arcana — sun and moon at twilight"
+            className="hero-img"
+            style={{
+              transform: `translateY(${scroll * 0.08}px)`,
+            }}
+          />
+        </picture>
         <p className="hero-eyebrow" style={{ transform: `translate(-50%, ${scroll * -0.12}px)` }}>
           <span>Midsummerland</span>
           <span>presents</span>

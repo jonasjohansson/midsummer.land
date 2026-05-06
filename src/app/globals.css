@@ -733,7 +733,24 @@ body {
   body { font-size: 17px; }
 
   .hero-img-wrap {
-    aspect-ratio: 3 / 4;
+    aspect-ratio: auto;
+    width: 100%;
+    margin-left: 0;
+  }
+  .hero-img {
+    height: auto;
+    object-fit: contain;
+  }
+  .hero-img-wrap::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, transparent, var(--bg));
+    pointer-events: none;
+    z-index: 3;
   }
   .hero-eyebrow {
     top: 14%;
