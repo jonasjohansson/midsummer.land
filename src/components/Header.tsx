@@ -15,8 +15,11 @@ export default function Header() {
     <header className="hero">
       <div className="hero-img-wrap">
         <picture>
-          <source media="(max-width: 720px)" srcSet="/assets/header-banner-mobile.jpg" />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <source
+            media="(max-width: 720px)"
+            srcSet="/assets/header-banner-mobile.jpg"
+          />
+          {}
           <img
             src="/assets/header-banner.jpg"
             alt="Bangers' Arcana — sun and moon at twilight"
@@ -26,20 +29,64 @@ export default function Header() {
             }}
           />
         </picture>
-        <p className="hero-eyebrow" style={{ transform: `translate(-50%, ${scroll * -0.12}px)` }}>
+        <p
+          className="hero-eyebrow"
+          style={{ transform: `translate(-50%, ${scroll * -0.12}px)` }}
+        >
           <span>Midsummerland</span>
-          <span>presents</span>
+          <span className="hero-presents">
+            <svg className="hero-flair" viewBox="0 0 60 12" aria-hidden="true">
+              <line x1="0" y1="6" x2="20" y2="6" stroke="currentColor" strokeWidth="0.6" />
+              <path d="M24 6 L27 3 L30 6 L27 9 Z" fill="none" stroke="currentColor" strokeWidth="0.6" />
+              <circle cx="27" cy="6" r="1.2" fill="currentColor" />
+              <line x1="34" y1="6" x2="42" y2="6" stroke="currentColor" strokeWidth="0.6" />
+              <circle cx="46" cy="6" r="1.5" fill="currentColor" />
+              <line x1="50" y1="6" x2="60" y2="6" stroke="currentColor" strokeWidth="0.6" />
+            </svg>
+            presents
+            <svg className="hero-flair" viewBox="0 0 60 12" aria-hidden="true">
+              <line x1="0" y1="6" x2="10" y2="6" stroke="currentColor" strokeWidth="0.6" />
+              <circle cx="14" cy="6" r="1.5" fill="currentColor" />
+              <line x1="18" y1="6" x2="26" y2="6" stroke="currentColor" strokeWidth="0.6" />
+              <path d="M30 6 L33 3 L36 6 L33 9 Z" fill="none" stroke="currentColor" strokeWidth="0.6" />
+              <circle cx="33" cy="6" r="1.2" fill="currentColor" />
+              <line x1="40" y1="6" x2="60" y2="6" stroke="currentColor" strokeWidth="0.6" />
+            </svg>
+          </span>
         </p>
-        <div className="hero-text" style={{ transform: `translate(-50%, calc(-50% + ${scroll * -0.18}px))`, top: "50%" }}>
+        <div
+          className="hero-text"
+          style={{
+            transform: `translate(-50%, calc(-50% + ${scroll * -0.18}px))`,
+            top: "50%",
+          }}
+        >
           <h1 className="hero-title">
-            <span className="hero-title-1">Bangers&apos;</span>
+            <span className="hero-title-1">The</span>
             <span className="hero-title-2">Arcana</span>
           </h1>
           <div className="hero-rule">
             <svg viewBox="0 0 200 16" aria-hidden="true">
-              <line x1="0" y1="8" x2="86" y2="8" stroke="currentColor" strokeWidth="0.6"/>
-              <path d="M100 0 L102 7 L109 8 L102 9 L100 16 L98 9 L91 8 L98 7 Z" fill="currentColor"/>
-              <line x1="114" y1="8" x2="200" y2="8" stroke="currentColor" strokeWidth="0.6"/>
+              <line
+                x1="0"
+                y1="8"
+                x2="86"
+                y2="8"
+                stroke="currentColor"
+                strokeWidth="0.6"
+              />
+              <path
+                d="M100 0 L102 7 L109 8 L102 9 L100 16 L98 9 L91 8 L98 7 Z"
+                fill="currentColor"
+              />
+              <line
+                x1="114"
+                y1="8"
+                x2="200"
+                y2="8"
+                stroke="currentColor"
+                strokeWidth="0.6"
+              />
             </svg>
           </div>
           <p className="hero-sub">A dream drawn by fate</p>

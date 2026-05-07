@@ -125,6 +125,17 @@ body {
   gap: 4px;
   line-height: 1.2;
 }
+.hero-presents {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero-flair {
+  width: 80px;
+  height: 14px;
+  color: currentColor;
+  opacity: 0.7;
+}
 .hero-title {
   font-family: 'Cinzel', 'Cormorant Garamond', serif;
   font-weight: 700;
@@ -152,9 +163,10 @@ body {
   margin-bottom: -0.02em;
 }
 .hero-title-2 {
+  font-family: var(--font-bodoni), 'Cinzel', serif;
   font-weight: 700;
   font-size: 0.86em;
-  letter-spacing: 0.015em;
+  letter-spacing: 0.04em;
 }
 .hero-rule {
   color: var(--cream);
@@ -310,6 +322,14 @@ body {
   height: auto;
 }
 [data-slot="realm"] { display: none; }
+.section-grid:has([data-slot="realm"]) {
+  display: block;
+  text-align: center;
+}
+.section-grid:has([data-slot="realm"]) .section-prose {
+  max-width: 680px;
+  margin: 0 auto;
+}
 
 /* ───────── Sections (card flipped open) ───────── */
 .section.section-wide {
@@ -1016,7 +1036,7 @@ body {
 /* ───────── Footer ───────── */
 .foot {
   text-align: center;
-  margin-top: -200px;
+  margin-top: -300px;
   padding-bottom: 0;
   margin-bottom: 0;
   position: relative;

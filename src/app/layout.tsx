@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Cinzel, EB_Garamond } from "next/font/google";
+import { Cormorant_Garamond, Cinzel, EB_Garamond, Bodoni_Moda } from "next/font/google";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -14,6 +14,13 @@ const cinzel = Cinzel({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-cinzel",
+  display: "swap",
+});
+
+const bodoniModa = Bodoni_Moda({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-bodoni",
   display: "swap",
 });
 
@@ -36,7 +43,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${cinzel.variable} ${ebGaramond.variable}`}>
+    <html lang="en" className={`${cormorant.variable} ${cinzel.variable} ${ebGaramond.variable} ${bodoniModa.variable}`}>
       <body>{children}</body>
     </html>
   );
