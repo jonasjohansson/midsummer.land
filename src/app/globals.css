@@ -440,12 +440,12 @@ body {
 .card-body { color: var(--ink-soft); }
 
 .section-grid {
-  padding-left: 250px;
+  padding-left: 280px;
   padding-right: 32px;
 }
 .section-reverse .section-grid {
   padding-left: 32px;
-  padding-right: 250px;
+  padding-right: 280px;
 }
 .section-frameless .section-grid {
   padding-left: 310px;
@@ -455,7 +455,7 @@ body {
   left: -80px;
   top: 50%;
   transform: rotate(-3deg) translateY(-50%);
-  width: 280px;
+  width: 320px;
   z-index: 2;
 }
 .section-reverse .section-tarot {
