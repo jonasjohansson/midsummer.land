@@ -72,7 +72,7 @@ export default function TarotCard({ numeral, name, slotId, hint, image }: TarotC
     }
   }, []);
 
-  const enterTimer = useRef<ReturnType<typeof setTimeout>>();
+  const enterTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   const onMouseEnter = useCallback(() => {
     setHovering(true);
