@@ -99,7 +99,7 @@ export default function TarotCard({ numeral, name, slotId, hint, image }: TarotC
   return (
     <div
       ref={cardRef}
-      className={`tarot-card ${visible ? "tarot-visible" : ""}`}
+      className={`tarot-card ${visible ? "tarot-visible" : ""} ${image ? "tarot-card-with-image" : ""}`}
       data-slot={slotId}
       onMouseMove={onMouseMove}
       onMouseEnter={onMouseEnter}

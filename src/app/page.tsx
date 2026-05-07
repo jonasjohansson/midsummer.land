@@ -95,6 +95,7 @@ export default function Home() {
             numeral="II"
             title="The Offering"
             subtitle="How to take part"
+            tarot={{ numeral: "II", name: "The Offering", slotId: "offering", hint: "tarot card · the offering", image: "/assets/the-offering.jpg" }}
           >
             <p>
               Bangers&apos; Arcana is not built by hosts alone. It comes alive through the offerings carried across the threshold.
@@ -182,6 +183,8 @@ export default function Home() {
             numeral="VI"
             title="The Coin"
             subtitle="How we keep the world turning"
+            tarot={{ numeral: "VI", name: "The Coin", slotId: "coin", hint: "tarot card · the coin", image: "/assets/the-coin.jpg" }}
+            reverse
           >
             <p>
               Bangers&apos; Arcana is built together, and the cost is shared between everyone who enters the realm.

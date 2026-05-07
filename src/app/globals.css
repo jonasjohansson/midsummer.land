@@ -81,7 +81,7 @@ body {
   position: relative;
   width: calc(100% + 12px);
   margin-left: -6px;
-  aspect-ratio: 1456 / 816;
+  aspect-ratio: 2730 / 1746;
   overflow: hidden;
 }
 .hero-img {
@@ -191,23 +191,25 @@ body {
 
 /* ───────── Scroll arrow ───────── */
 .scroll-arrow {
-  position: relative;
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 8;
   display: flex;
   justify-content: center;
-  padding: 0 0 12px;
-  margin-top: -34px;
   color: var(--gold);
   opacity: 0.6;
   animation: arrowFloat 3s ease-in-out infinite;
+  pointer-events: none;
 }
 .scroll-arrow-svg {
   width: 80px;
   height: 110px;
 }
 @keyframes arrowFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(8px); }
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
 }
 
 /* ───────── Main ───────── */
@@ -514,7 +516,7 @@ body {
   aspect-ratio: auto;
   height: auto;
 }
-.tarot-card:has(.tarot-card-has-image) {
+.tarot-card-with-image {
   aspect-ratio: auto;
 }
 .tarot-card-image {
@@ -1008,7 +1010,7 @@ body {
   .card-numeral { font-size: 11px; }
 
   .section { margin: 0 0 48px; }
-  .section-wide { margin-left: -18px; margin-right: -18px; }
+  .section.section-wide { margin-left: 0; margin-right: 0; }
   .section-grid,
   .section-reverse .section-grid {
     grid-template-columns: 1fr;
