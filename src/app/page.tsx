@@ -19,15 +19,22 @@ export default function Home() {
 
   return (
     <div className="app">
+      <svg width="0" height="0" style={{ position: "absolute" }}>
+        <defs>
+          <filter id="parchment-rough">
+            <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="5" seed="2" result="noise" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" />
+          </filter>
+        </defs>
+      </svg>
       <StarField density="medium" />
       <Header />
 
-      <div className="scroll-arrow" aria-hidden="true">
+      <div className="scroll-arrow" aria-hidden="true" style={{ opacity: Math.max(0, 0.6 - scroll * 0.004) }}>
         <svg viewBox="0 0 60 80" className="scroll-arrow-svg">
-          <circle cx="30" cy="4" r="3" fill="currentColor" opacity="0.6" />
-          <line x1="30" y1="8" x2="30" y2="48" stroke="currentColor" strokeWidth="2" />
-          <path d="M30 56 L38 44 L30 49 L22 44 Z" fill="currentColor" />
-          <path d="M30 62 L32.5 68 L39 70 L32.5 72 L30 78 L27.5 72 L21 70 L27.5 68 Z" fill="currentColor" opacity="0.7" />
+          <path d="M30 2 L31.2 6.5 L36 8 L31.2 9.5 L30 14 L28.8 9.5 L24 8 L28.8 6.5 Z" fill="currentColor" opacity="0.8" />
+          <line x1="30" y1="18" x2="30" y2="52" stroke="currentColor" strokeWidth="0.8" />
+          <path d="M30 58 L34 50 L30 53 L26 50 Z" fill="currentColor" />
         </svg>
       </div>
 
@@ -35,16 +42,12 @@ export default function Home() {
         <div className="main-inner">
           <Intro />
 
-          <div className="location-image">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/arcana-location.png" alt="Red Swedish cabins by the archipelago at twilight" />
-          </div>
-
           <CardSection
-            numeral="I"
             title="The Arcana"
             subtitle="The world we build together"
-            tarot={{ numeral: "I", name: "The Arcana", slotId: "arcana", hint: "tarot card · the arcana", image: "/assets/the-arcana.jpg" }}
+            tarot={{ numeral: "", name: "The Arcana", slotId: "arcana", hint: "tarot card · the arcana", image: "/assets/the-arcana.jpg" }}
+            wide
+            divider="moon"
           >
             <p>This is our seventh midsummer together.</p>
             <p>
@@ -66,12 +69,76 @@ export default function Home() {
             </p>
           </CardSection>
 
+          <div className="location-image">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/assets/arcana-location.png" alt="Red Swedish cabins by the archipelago at twilight" />
+          </div>
+
+          <CardSection
+            numeral="I"
+            title="The Realm"
+            subtitle="Vibäck, by water and sky"
+            reverse
+          >
+            <p>
+              Our home for the weekend is <strong>Vibäck 10</strong>, a former seaside guesthouse from 1938,
+              tucked into Marsviken where the forest meets the water.
+            </p>
+            <p>
+              For three days, we take over its cabins, shore, sauna, paths and gathering places.
+            </p>
+            <p>Arrive early on Friday. Leave late on Sunday.</p>
+            <p>For one weekend, Vibäck becomes the realm of Bangers&apos; Arcana.</p>
+          </CardSection>
+
           <CardSection
             numeral="II"
+            title="The Offering"
+            subtitle="How to take part"
+          >
+            <p>
+              Bangers&apos; Arcana is not built by hosts alone. It comes alive through the offerings carried across the threshold.
+            </p>
+            <p>
+              Bring a song, a game, a reading, a ritual, a performance, a hidden talent, a helping hand,
+              or a small piece of magic only you could summon.
+            </p>
+            <p>
+              Some offerings will be written into the weekend. Others will reveal themselves when the moment calls.
+              In the form below, tell us what you might bring into the Arcana.
+            </p>
+          </CardSection>
+
+          <CardSection
+            numeral="III"
+            title="The Masquerade"
+            subtitle="Dress as the card you wish to draw"
+            tarot={{ numeral: "III", name: "The Masquerade", slotId: "masquerade", hint: "tarot card · dress code", image: "/assets/the-masquerade.jpg" }}
+            reverse
+          >
+            <p>
+              This is a costumed gathering. Choose a card, archetype, symbol, omen, creature, character,
+              or invented piece of the Arcana, and let it guide what you become.
+            </p>
+            <p>
+              You might arrive as The Fool, The Star, The Moon, The Lovers, The Tower, The Hermit, a knight,
+              a queen, a cup, a sword, a flower, a flame, a shadow, a sign, or something no deck has named before.
+            </p>
+            <p>
+              Bring fabric, flowers, masks, symbols, props, movement, mystery.
+              The world becomes richer when everyone adds to the illusion.
+            </p>
+            <p className="muted">
+              Decorations are welcome too. If you have an object, banner, lantern, altar, garland, card, creature,
+              or curious thing that belongs in the Arcana, bring it through the veil.
+            </p>
+          </CardSection>
+
+          <CardSection
+            numeral="IV"
             title="The Traveller"
             subtitle="The path that leads through the veil"
-            tarot={{ numeral: "II", name: "The Traveller", slotId: "traveller", hint: "tarot card · the journey", image: "/assets/the-traveller.jpg" }}
-            reverse
+            tarot={{ numeral: "IV", name: "The Traveller", slotId: "traveller", hint: "tarot card · the journey", image: "/assets/the-traveller.jpg" }}
           >
             <p>
               From Stockholm, the road south unfolds for roughly an hour and a half. Trains run to Nyköping;
@@ -85,82 +152,91 @@ export default function Home() {
           </CardSection>
 
           <CardSection
-            numeral="III"
-            title="The Performer"
-            subtitle="Sing in symbols, dance into the dream"
-            tarot={{ numeral: "III", name: "The Performer", slotId: "performer", hint: "tarot card · performance" }}
-          >
-            <p>
-              Each guest carries their own arcana. The stage is open to those who feel the pull —
-              music, ritual, spoken word, surprise. Tell us in the form below if you wish to offer a performance.
-            </p>
-            <p className="muted">A program of acts and ceremonies will be revealed nearer the solstice.</p>
-          </CardSection>
-
-          <CardSection
-            numeral="IV"
+            numeral="V"
             title="The Feast"
-            subtitle="Bread, berries, and the long table at twilight"
-            tarot={{ numeral: "IV", name: "The Feast", slotId: "feast", hint: "tarot card · food / feast", image: "/assets/the-feast.jpg" }}
+            subtitle="The midsummer table is set"
+            tarot={{ numeral: "V", name: "The Feast", slotId: "feast", hint: "tarot card · food / feast", image: "/assets/the-feast.jpg" }}
             reverse
           >
             <p>
-              We share meals together — a long midsummer table, herbs from the field, fish from the water,
-              strawberries and cream as the sun refuses to set.
+              Across the weekend, the Arcana will provide ingredients for shared meals, which we will prepare
+              together in kitchen teams.
             </p>
             <p>
-              Mark your dietary omens in the form so the kitchen oracles may prepare. Hands are welcome at the table,
-              the fire, and the washing-up.
-            </p>
-          </CardSection>
-
-          <CardSection
-            numeral="V"
-            title="The Masquerade"
-            subtitle="Dress as the card you wish to draw"
-            tarot={{ numeral: "V", name: "The Masquerade", slotId: "masquerade", hint: "tarot card · dress code", image: "/assets/the-masquerade.jpg" }}
-          >
-            <p>
-              This is a costumed gathering. Choose a card — major or minor arcana, ancient or invented — and become it.
-              The Sun, the Hermit, the Star, the Lovers, the Wheel; the Six of Cups, the Knight of Wands.
+              The main feast is Friday&apos;s midsummer lunch. For this, everyone is invited to bring one dish to share:
+              something traditional, beloved, strange, seasonal, or simply delicious.
             </p>
             <p>
-              Bring symbols, fabric, flowers, faces. The land becomes a living tarot when we dress as the deck.
+              The shared menu will be built around vegetarian food, but if your personal prophecy requires meat,
+              you are welcome to bring it yourself.
             </p>
-            <p className="muted">If your card needs a partner, conspire with another guest. If it needs a prop, the cabin
-            keeps a small chest of wands, cups and crowns.</p>
+            <p>
+              There will also be a magical bar experience, with some drinks provided by the house. Please bring
+              offerings for the bar: bottles, mixers, garnishes, strange spirits, soft drinks, or anything you
+              would like to see appear in the cup.
+            </p>
+            <p className="muted">Mark your dietary needs in the form so the feast can welcome everyone.</p>
           </CardSection>
 
           <CardSection
             numeral="VI"
-            title="The Pilgrim&apos;s Bundle"
+            title="The Coin"
+            subtitle="How we keep the world turning"
+          >
+            <p>
+              Bangers&apos; Arcana is built together, and the cost is shared between everyone who enters the realm.
+            </p>
+            <p>
+              The coin covers Vibäck, shared meals, the bar experience, decorations, a circus tent, lights, sound,
+              and the materials needed to bring the weekend to life.
+            </p>
+            <p>Choose your path of rest:</p>
+            <ul className="bullets">
+              <li><strong>1400 SEK — The Field of Dreams</strong><br/>A place beneath your own tent</li>
+              <li><strong>1800 SEK — The Cabin Floor</strong><br/>A roof above, a sleeping mat below</li>
+              <li><strong>2200 SEK — The Chosen Bed</strong><br/>A bed within the cabin walls</li>
+            </ul>
+            <p className="muted">Mark your preference in the form. Spaces beneath roofs are limited, so the cards may need to decide.</p>
+          </CardSection>
+
+          <CardSection
+            title="The Satchel"
             subtitle="What to carry across the threshold"
           >
+            <p>
+              Bring your personal belongings, your best attitude, and whatever you need to sleep, swim,
+              feast, dress up, and wander between worlds.
+            </p>
             <div className="bring-grid">
               <div>
                 <h4>Essentials</h4>
                 <ul className="bullets">
-                  <li>An outfit for the occasion</li>
-                  <li>Sleeping bag / pillow if camping</li>
-                  <li>Towel & swimwear (the water calls)</li>
-                  <li>Sturdy shoes for the fields</li>
-                  <li>A reusable cup</li>
+                  <li>Bedding or sleeping bag</li>
+                  <li>Tent, if you are camping</li>
+                  <li>Homemade potluck dish for Friday&apos;s midsummer lunch</li>
+                  <li>Swimsuit and towel</li>
+                  <li>Sunscreen and mosquito spray</li>
+                  <li>Warm layers for the night</li>
+                  <li>Shoes for grass, gravel, and dancing</li>
                 </ul>
               </div>
               <div>
-                <h4>Offerings</h4>
+                <h4>For the Arcana</h4>
                 <ul className="bullets">
-                  <li>An instrument, if you play</li>
-                  <li>A poem, a song, a story</li>
-                  <li>A bottle to share</li>
-                  <li>Flowers for the midsummer pole</li>
-                  <li>A small token or symbol</li>
+                  <li>Fabulous outfits</li>
+                  <li>A white look for midsummer day</li>
+                  <li>Decorations, blankets, props, symbols, or other fun things for the party</li>
+                  <li>Drinks and contributions for the bar</li>
+                  <li>Party supplies</li>
+                  <li>An instrument, song, game, reading, ritual, or performance</li>
+                  <li>Anything small and magical you feel called to bring</li>
                 </ul>
               </div>
             </div>
           </CardSection>
 
           <section className="section form-section">
+            <div className="parchment-edge" aria-hidden="true" />
             <Form />
           </section>
 

@@ -8,7 +8,10 @@ export default function Divider({ variant = "star" }: { variant?: "star" | "line
     return (
       <svg className="div-svg" viewBox="0 0 200 16" aria-hidden="true">
         <line x1="0" y1="8" x2="86" y2="8" stroke="currentColor" strokeWidth="0.6"/>
-        <path d="M100 2 a6 6 0 1 0 0 12 a4 4 0 1 1 0 -12" fill="currentColor"/>
+        <g transform="rotate(-20, 100, 8)">
+          <circle cx="100" cy="8" r="7" fill="currentColor"/>
+          <circle cx="103" cy="7" r="5" fill="#1e1d3c"/>
+        </g>
         <line x1="114" y1="8" x2="200" y2="8" stroke="currentColor" strokeWidth="0.6"/>
       </svg>
     );

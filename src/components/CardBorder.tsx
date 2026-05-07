@@ -8,9 +8,10 @@ interface CardBorderProps {
   title?: string;
   subtitle?: string;
   accent?: string;
+  divider?: "star" | "line" | "moon";
 }
 
-export default function CardBorder({ children, numeral, title, subtitle, accent = "#d4a857" }: CardBorderProps) {
+export default function CardBorder({ children, numeral, title, subtitle, accent = "#d4a857", divider = "star" }: CardBorderProps) {
   return (
     <div className="card-border" style={{ "--accent": accent } as React.CSSProperties}>
       <svg className="card-corner tl" viewBox="0 0 60 60" aria-hidden="true">
@@ -43,7 +44,7 @@ export default function CardBorder({ children, numeral, title, subtitle, accent 
       {(numeral || title) && (
         <div className="card-head">
           {numeral && <div className="card-numeral">{numeral}</div>}
-          <Divider />
+          <Divider variant={divider} />
           {title && <h2 className="card-title">{title}</h2>}
           {subtitle && <p className="card-sub">{subtitle}</p>}
         </div>
