@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 
-const COUNTS: Record<string, number> = { low: 30, medium: 70, high: 130 };
+const COUNTS: Record<string, number> = { low: 60, medium: 150, high: 250 };
 
 interface Star {
   id: number;

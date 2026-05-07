@@ -22,6 +22,15 @@ export default function Home() {
       <StarField density="medium" />
       <Header />
 
+      <div className="scroll-arrow" aria-hidden="true">
+        <svg viewBox="0 0 60 80" className="scroll-arrow-svg">
+          <circle cx="30" cy="4" r="3" fill="currentColor" opacity="0.6" />
+          <line x1="30" y1="8" x2="30" y2="48" stroke="currentColor" strokeWidth="2" />
+          <path d="M30 56 L38 44 L30 49 L22 44 Z" fill="currentColor" />
+          <path d="M30 62 L32.5 68 L39 70 L32.5 72 L30 78 L27.5 72 L21 70 L27.5 68 Z" fill="currentColor" opacity="0.7" />
+        </svg>
+      </div>
+
       <main className="main" style={{ marginTop: `${-2 - Math.min(scroll * 0.12, 140)}px` }}>
         <div className="main-inner">
           <Intro />
@@ -33,19 +42,28 @@ export default function Home() {
 
           <CardSection
             numeral="I"
-            title="The Cabin"
-            subtitle="Where weary travellers lay their crowns"
-            tarot={{ numeral: "I", name: "The Cabin", slotId: "cabin", hint: "tarot card · cabin / accommodation" }}
+            title="The Arcana"
+            subtitle="The world we build together"
+            tarot={{ numeral: "I", name: "The Arcana", slotId: "arcana", hint: "tarot card · the arcana", image: "/assets/the-arcana.jpg" }}
           >
+            <p>This is our seventh midsummer together.</p>
             <p>
-              We gather at <strong>Vibäck 10, 611 95 Nyköping</strong> — a red Swedish cabin nestled by the archipelago,
-              held between island silhouettes and reflected sky.
+              What began as a small gathering of friends has become a tradition: a weekend shaped by friendship,
+              music, food, games, swimming, dancing, performances, late nights, collective imagination, and the
+              strange magic that happens when everyone adds something of their own.
             </p>
             <p>
-              Beds are limited and gathered around the main house. Bring a tent, a hammock, or a sleeping bag if the
-              veil calls you to rest beneath the open stars. Allocations will be drawn closer to the date.
+              This year, that world becomes Bangers&apos; Arcana: a midsummer experience of fate, friendship, symbols,
+              stories, and the space between dream and ritual.
             </p>
-            <p className="muted">19 — 21 June 2026 · arrive Friday afternoon, depart Sunday before dusk.</p>
+            <p>
+              It is not something you attend from the outside. It is something we make together, moment by moment,
+              until the ordinary world softens and another world begins to take shape.
+            </p>
+            <p>
+              Welcome to the seventh gathering.<br/>
+              Welcome to the Arcana.
+            </p>
           </CardSection>
 
           <CardSection
