@@ -278,7 +278,6 @@ export default function Form() {
 
         <div className="ff">
           <label className="ff-label">Have you sent your coin? *</label>
-          <div className="ff-help">Payment details will be shared separately.</div>
           <div className="ff-options">
             {["Yes", "No, but I will"].map((opt) => (
               <label key={opt} className={`ff-opt ${data.paid === opt ? "selected" : ""}`}>

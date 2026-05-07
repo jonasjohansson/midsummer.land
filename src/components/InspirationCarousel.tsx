@@ -15,6 +15,9 @@ export default function InspirationCarousel({ images }: InspirationCarouselProps
   const dragMovedRef = useRef(false);
   const dragStartRef = useRef({ x: 0, scrollLeft: 0 });
   const tapTargetRef = useRef<HTMLElement | null>(null);
+  const velocityRef = useRef(0);
+  const lastPointerXRef = useRef(0);
+  const lastPointerTimeRef = useRef(0);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const doubled = [...images, ...images];
@@ -32,8 +35,14 @@ export default function InspirationCarousel({ images }: InspirationCarouselProps
     const track = trackRef.current;
     if (!track) return;
 
-    if (!draggingRef.current && Date.now() >= pausedUntilRef.current) {
-      scrollPosRef.current += 0.3;
+    if (!draggingRef.current) {
+      if (Math.abs(velocityRef.current) > 0.5) {
+        scrollPosRef.current += velocityRef.current;
+        velocityRef.current *= 0.95;
+      } else {
+        velocityRef.current = 0;
+        scrollPosRef.current += 0.5;
+      }
       wrapScroll();
       track.scrollLeft = scrollPosRef.current;
     }
@@ -57,6 +66,7 @@ export default function InspirationCarousel({ images }: InspirationCarouselProps
       wrapScroll();
       track.scrollLeft = scrollPosRef.current;
       pausedUntilRef.current = Date.now() + 3000;
+      velocityRef.current = 0;
     };
 
     track.addEventListener("wheel", onWheel, { passive: false });
@@ -78,8 +88,11 @@ export default function InspirationCarousel({ images }: InspirationCarouselProps
   const handlePointerDown = useCallback((e: React.PointerEvent) => {
     draggingRef.current = true;
     dragMovedRef.current = false;
+    velocityRef.current = 0;
     dragStartRef.current = { x: e.clientX, scrollLeft: scrollPosRef.current };
     tapTargetRef.current = e.target as HTMLElement;
+    lastPointerXRef.current = e.clientX;
+    lastPointerTimeRef.current = Date.now();
     pausedUntilRef.current = Date.now() + 60000;
     trackRef.current?.setPointerCapture(e.pointerId);
   }, []);
@@ -91,13 +104,25 @@ export default function InspirationCarousel({ images }: InspirationCarouselProps
     scrollPosRef.current = dragStartRef.current.scrollLeft + dx;
     wrapScroll();
     if (trackRef.current) trackRef.current.scrollLeft = scrollPosRef.current;
+
+    const now = Date.now();
+    const dt = now - lastPointerTimeRef.current;
+    if (dt > 0) {
+      velocityRef.current = (lastPointerXRef.current - e.clientX) / dt * 16;
+    }
+    lastPointerXRef.current = e.clientX;
+    lastPointerTimeRef.current = now;
   }, [wrapScroll]);
 
-  const handlePointerUp = useCallback((e: React.PointerEvent) => {
+  const handlePointerUp = useCallback(() => {
     draggingRef.current = false;
-    pausedUntilRef.current = Date.now() + 3000;
+
+    const dt = Date.now() - lastPointerTimeRef.current;
+    if (dt > 100) velocityRef.current = 0;
 
     if (!dragMovedRef.current) {
+      velocityRef.current = 0;
+      pausedUntilRef.current = Date.now() + 3000;
       const item = tapTargetRef.current?.closest(".inspiration-item");
       if (item) {
         const idx = Number(item.getAttribute("data-index"));

@@ -441,9 +441,10 @@ body {
 
 .section-grid {
   padding-left: 250px;
+  padding-right: 32px;
 }
 .section-reverse .section-grid {
-  padding-left: 0;
+  padding-left: 32px;
   padding-right: 250px;
 }
 .section-frameless .section-grid {
@@ -1155,6 +1156,7 @@ body {
     text-align: center;
   }
   .section-grid .bullets {
+    display: inline-block;
     text-align: left;
   }
   .section-prose .callout {
@@ -1174,7 +1176,7 @@ body {
     position: static !important;
     max-width: 70vw;
     width: auto !important;
-    margin: 0 auto;
+    margin: 0 auto 32px;
     transform: rotate(-2deg);
   }
   .section-reverse .section-tarot {

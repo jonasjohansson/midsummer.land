@@ -99,9 +99,9 @@ export default function Home() {
             </p>
             <p>
               This year, that world becomes{" "}
-              <span className="gold">Bangers&apos; Arcana</span>: a midsummer
-              experience of fate, friendship, symbols, stories, and the space
-              between dream and ritual.
+              <span className="gold">The Arcana</span>: a midsummer experience
+              of fate, friendship, symbols, stories, and the space between dream
+              and ritual.
             </p>
             <p className="callout">
               It is not something you attend from the outside. It is something
@@ -133,7 +133,13 @@ export default function Home() {
             numeral="I"
             title="The Realm"
             subtitle="Vibäck, by water and sky"
-            tarot={{ numeral: "I", name: "The Realm", slotId: "realm", hint: "tarot card · the realm", image: "/assets/the-realm.jpg" }}
+            tarot={{
+              numeral: "I",
+              name: "The Realm",
+              slotId: "realm",
+              hint: "tarot card · the realm",
+              image: "/assets/the-realm.jpg",
+            }}
             reverse
           >
             <p>
@@ -150,7 +156,7 @@ export default function Home() {
             </p>
             <p>
               For one weekend, Vibäck becomes the realm of{" "}
-              <span className="gold">Bangers&apos; Arcana</span>.
+              <span className="gold">The Arcana</span>.
             </p>
           </CardSection>
 
@@ -167,8 +173,7 @@ export default function Home() {
             }}
           >
             <p>
-              Bangers&apos; Arcana is not built by hosts alone. It comes alive
-              through the{" "}
+              The Arcana is not built by hosts alone. It comes alive through the{" "}
               <strong>offerings carried across the threshold</strong>.
             </p>
             <p className="callout">
@@ -222,38 +227,130 @@ export default function Home() {
             </p>
           </CardSection>
 
-          <InspirationCarousel images={[
-            { src: "/assets/mood/18cfd6e1029db36f3342a84e535e1553.jpg", alt: "Outfit inspiration" },
-            { src: "/assets/mood/19e4efc54e6ae45ce1aa03af00bfbd6a.jpg", alt: "Outfit inspiration" },
-            { src: "/assets/mood/1b9e2f4a02a06d422a90e281466fc9ef.jpg", alt: "Outfit inspiration" },
-            { src: "/assets/mood/1e8bc9242e1f73bb1e9f004049ac3403.jpg", alt: "Outfit inspiration" },
-            { src: "/assets/mood/1f9f5f976c5154c0b417bc856864bbbb.jpg", alt: "Outfit inspiration" },
-            { src: "/assets/mood/2a9482546e492063c77b42072a5e75af.jpg", alt: "Outfit inspiration" },
-            { src: "/assets/mood/2c918861d28506cdc5fa96fe7c0d7df7.jpg", alt: "Outfit inspiration" },
-            { src: "/assets/mood/3079df01be0a050c2f48ac1a47e6d2c5.jpg", alt: "Outfit inspiration" },
-            { src: "/assets/mood/34b50565c3192f8261f5e4041bb75db2.jpg", alt: "Outfit inspiration" },
-            { src: "/assets/mood/50a1bcc59663d8eebc2a0abe72e6a190.jpg", alt: "Outfit inspiration" },
-            { src: "/assets/mood/59155c2c68c755e62b24ed1b88156471.jpg", alt: "Outfit inspiration" },
-            { src: "/assets/mood/683f1bb346dbf353f67f6f5a2e7e07c3.jpg", alt: "Outfit inspiration" },
-            { src: "/assets/mood/6efe459c80e3178ad953412067e812ef.jpg", alt: "Outfit inspiration" },
-            { src: "/assets/mood/70443e37a1a052ee90d1a7514e74c4b5.jpg", alt: "Outfit inspiration" },
-            { src: "/assets/mood/740ad4406454ed1f8dec6e1f5184dd37.jpg", alt: "Outfit inspiration" },
-            { src: "/assets/mood/74c6d0d097a438cf133810873a07ebcd.jpg", alt: "Outfit inspiration" },
-            { src: "/assets/mood/84672406ea49b21aa47a2730008f19ec.jpg", alt: "Outfit inspiration" },
-            { src: "/assets/mood/8a3f3097187fa4269af650860328e96f.jpg", alt: "Outfit inspiration" },
-            { src: "/assets/mood/8de7c92712d2bf92e6717ff233aa4f7e.jpg", alt: "Outfit inspiration" },
-            { src: "/assets/mood/b147684d65cf2e6274a6f8c8edc4cdeb.jpg", alt: "Outfit inspiration" },
-            { src: "/assets/mood/b7afd91e4640c6dc9482dad58e3cbbcd.jpg", alt: "Outfit inspiration" },
-            { src: "/assets/mood/b8efda7ea8c998a393241dcf3649a34d.jpg", alt: "Outfit inspiration" },
-            { src: "/assets/mood/d631289972ad6dc2d217083af2f02de7.jpg", alt: "Outfit inspiration" },
-            { src: "/assets/mood/d96a2e28333ec1196ae2396c1b1d0855.jpg", alt: "Outfit inspiration" },
-            { src: "/assets/mood/edc05e2e2a526c948891ba6042cfdbfb.jpg", alt: "Outfit inspiration" },
-            { src: "/assets/mood/f05cceee7622634c87362cf8817a6ff5.jpg", alt: "Outfit inspiration" },
-            { src: "/assets/mood/f190825935e0ea210367f58d0155b86d.jpg", alt: "Outfit inspiration" },
-            { src: "/assets/mood/f7d39582b705bdb3078166c8814c2bcb.jpg", alt: "Outfit inspiration" },
-            { src: "/assets/mood/fc4cbcc76cda1e1baddbdb1f85d0a0fd.jpg", alt: "Outfit inspiration" },
-            { src: "/assets/mood/fc50c761123ebd692a4464ce58218994.jpg", alt: "Outfit inspiration" },
-          ]} />
+          <InspirationCarousel
+            images={[
+              {
+                src: "/assets/mood/18cfd6e1029db36f3342a84e535e1553.jpg",
+                alt: "Outfit inspiration",
+              },
+              {
+                src: "/assets/mood/19e4efc54e6ae45ce1aa03af00bfbd6a.jpg",
+                alt: "Outfit inspiration",
+              },
+              {
+                src: "/assets/mood/1b9e2f4a02a06d422a90e281466fc9ef.jpg",
+                alt: "Outfit inspiration",
+              },
+              {
+                src: "/assets/mood/1e8bc9242e1f73bb1e9f004049ac3403.jpg",
+                alt: "Outfit inspiration",
+              },
+              {
+                src: "/assets/mood/1f9f5f976c5154c0b417bc856864bbbb.jpg",
+                alt: "Outfit inspiration",
+              },
+              {
+                src: "/assets/mood/2a9482546e492063c77b42072a5e75af.jpg",
+                alt: "Outfit inspiration",
+              },
+              {
+                src: "/assets/mood/2c918861d28506cdc5fa96fe7c0d7df7.jpg",
+                alt: "Outfit inspiration",
+              },
+              {
+                src: "/assets/mood/3079df01be0a050c2f48ac1a47e6d2c5.jpg",
+                alt: "Outfit inspiration",
+              },
+              {
+                src: "/assets/mood/34b50565c3192f8261f5e4041bb75db2.jpg",
+                alt: "Outfit inspiration",
+              },
+              {
+                src: "/assets/mood/50a1bcc59663d8eebc2a0abe72e6a190.jpg",
+                alt: "Outfit inspiration",
+              },
+              {
+                src: "/assets/mood/59155c2c68c755e62b24ed1b88156471.jpg",
+                alt: "Outfit inspiration",
+              },
+              {
+                src: "/assets/mood/683f1bb346dbf353f67f6f5a2e7e07c3.jpg",
+                alt: "Outfit inspiration",
+              },
+              {
+                src: "/assets/mood/6efe459c80e3178ad953412067e812ef.jpg",
+                alt: "Outfit inspiration",
+              },
+              {
+                src: "/assets/mood/70443e37a1a052ee90d1a7514e74c4b5.jpg",
+                alt: "Outfit inspiration",
+              },
+              {
+                src: "/assets/mood/740ad4406454ed1f8dec6e1f5184dd37.jpg",
+                alt: "Outfit inspiration",
+              },
+              {
+                src: "/assets/mood/74c6d0d097a438cf133810873a07ebcd.jpg",
+                alt: "Outfit inspiration",
+              },
+              {
+                src: "/assets/mood/84672406ea49b21aa47a2730008f19ec.jpg",
+                alt: "Outfit inspiration",
+              },
+              {
+                src: "/assets/mood/8a3f3097187fa4269af650860328e96f.jpg",
+                alt: "Outfit inspiration",
+              },
+              {
+                src: "/assets/mood/8de7c92712d2bf92e6717ff233aa4f7e.jpg",
+                alt: "Outfit inspiration",
+              },
+              {
+                src: "/assets/mood/b147684d65cf2e6274a6f8c8edc4cdeb.jpg",
+                alt: "Outfit inspiration",
+              },
+              {
+                src: "/assets/mood/b7afd91e4640c6dc9482dad58e3cbbcd.jpg",
+                alt: "Outfit inspiration",
+              },
+              {
+                src: "/assets/mood/b8efda7ea8c998a393241dcf3649a34d.jpg",
+                alt: "Outfit inspiration",
+              },
+              {
+                src: "/assets/mood/d631289972ad6dc2d217083af2f02de7.jpg",
+                alt: "Outfit inspiration",
+              },
+              {
+                src: "/assets/mood/d96a2e28333ec1196ae2396c1b1d0855.jpg",
+                alt: "Outfit inspiration",
+              },
+              {
+                src: "/assets/mood/edc05e2e2a526c948891ba6042cfdbfb.jpg",
+                alt: "Outfit inspiration",
+              },
+              {
+                src: "/assets/mood/f05cceee7622634c87362cf8817a6ff5.jpg",
+                alt: "Outfit inspiration",
+              },
+              {
+                src: "/assets/mood/f190825935e0ea210367f58d0155b86d.jpg",
+                alt: "Outfit inspiration",
+              },
+              {
+                src: "/assets/mood/f7d39582b705bdb3078166c8814c2bcb.jpg",
+                alt: "Outfit inspiration",
+              },
+              {
+                src: "/assets/mood/fc4cbcc76cda1e1baddbdb1f85d0a0fd.jpg",
+                alt: "Outfit inspiration",
+              },
+              {
+                src: "/assets/mood/fc50c761123ebd692a4464ce58218994.jpg",
+                alt: "Outfit inspiration",
+              },
+            ]}
+          />
 
           <CardSection
             numeral="IV"
@@ -342,7 +439,7 @@ export default function Home() {
             }}
           >
             <p>
-              Bangers&apos; Arcana is built together, and the cost is{" "}
+              The Arcana is built together, and the cost is{" "}
               <strong>shared between everyone</strong> who enters the realm.
             </p>
             <p>
@@ -375,6 +472,24 @@ export default function Home() {
             <p className="muted">
               Mark your preference in the form. Spaces beneath roofs are
               limited, so the cards may need to decide.
+            </p>
+            <p>
+              Swish to <strong>072-161 50 63</strong> (Jonas Johansson) and
+              include the name(s) you are paying for.
+            </p>
+            <p>
+              If you do not have Swish, get someone to pay for you and make
+              sure they include your name. Please refrain from using Swish
+              cards. If you do not have Swish and it&apos;s complicated getting
+              someone to help you, you can make a bank transfer to:<br />
+              <strong>Falkenbergs Sparbank</strong><br />
+              <strong>Clearing: 8060-6</strong><br />
+              <strong>Account: 114 710 287-3</strong><br />
+              <strong>IBAN: SE7580000806061147102873</strong><br />
+              <strong>BIC: SWEDSESS</strong>
+            </p>
+            <p className="callout">
+              Payment is due by <span className="gold">1 June 2026</span>.
             </p>
           </CardSection>
 
@@ -440,7 +555,9 @@ export default function Home() {
               <div className="foot-text">
                 <Divider variant="star" />
                 <p>Midsummerland · Bangers&apos; Arcana · 19 — 21 June 2026</p>
-                <p className="muted">A dream drawn by fate · Vibäck 10, Nyköping</p>
+                <p className="muted">
+                  A dream drawn by fate · Vibäck 10, Nyköping
+                </p>
               </div>
             </div>
           </footer>
