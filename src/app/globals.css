@@ -216,7 +216,7 @@ body {
 .main {
   position: relative;
   background: transparent;
-  padding: 0 0 120px;
+  padding: 0;
   z-index: 7;
 }
 .main::before {
@@ -309,11 +309,26 @@ body {
   width: 100%;
   height: auto;
 }
+[data-slot="realm"] { display: none; }
 
 /* ───────── Sections (card flipped open) ───────── */
 .section.section-wide {
   margin-left: -140px;
   margin-right: -140px;
+}
+
+.section-frameless .card-border {
+  background: none;
+  border: none;
+}
+.section-frameless .card-border::before {
+  display: none;
+}
+.section-frameless .card-corner {
+  display: none;
+}
+.section-frameless .section-tarot {
+  width: 340px;
 }
 .section-wide .div-svg {
   width: 300px;
@@ -404,31 +419,46 @@ body {
 .card-body { color: var(--ink-soft); }
 
 .section-grid {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 48px;
-  align-items: center;
+  padding-left: 250px;
 }
 .section-reverse .section-grid {
-  grid-template-columns: 1fr 220px;
+  padding-left: 0;
+  padding-right: 250px;
+}
+.section-frameless .section-grid {
+  padding-left: 310px;
 }
 .section-tarot {
-  position: relative;
-  margin-left: -100px;
-  margin-top: -40px;
+  position: absolute;
+  left: -80px;
+  top: 50%;
+  transform: rotate(-3deg) translateY(-50%);
+  width: 280px;
   z-index: 2;
-  transform: rotate(-3deg);
 }
 .section-reverse .section-tarot {
-  order: 2;
-  margin-left: 0;
-  margin-right: -100px;
-  margin-top: -40px;
-  transform: rotate(3deg);
+  left: auto;
+  right: -80px;
+  transform: rotate(3deg) translateY(-50%);
 }
 .section-prose p { margin: 0 0 16px; line-height: 1.75; }
 .section-prose strong { color: var(--cream); font-weight: 500; }
 .section-prose .muted { color: var(--ink-faint); font-style: italic; font-size: 17px; }
+.section-prose .gold,
+.intro .gold {
+  color: var(--gold-soft);
+  font-weight: 500;
+}
+.section-prose .callout {
+  border-left: 2px solid var(--gold);
+  padding: 4px 0 4px 20px;
+  margin: 24px 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 21px;
+  color: var(--cream);
+  line-height: 1.7;
+}
 
 .bullets {
   list-style: none;
@@ -447,6 +477,60 @@ body {
   color: var(--gold);
   font-size: 12px;
   top: 4px;
+}
+
+/* ───────── Inspiration carousel ───────── */
+.inspiration-carousel {
+  margin: 0 calc(-50vw + 50%) 80px;
+  position: relative;
+  overflow: visible;
+}
+.inspiration-carousel::before,
+.inspiration-carousel::after {
+  content: "";
+  position: absolute;
+  top: -55px;
+  bottom: -55px;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+.inspiration-carousel::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg) 0%, rgba(30, 29, 60, 0.6) 40%, transparent 100%);
+}
+.inspiration-carousel::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg) 0%, rgba(30, 29, 60, 0.6) 40%, transparent 100%);
+}
+.inspiration-track {
+  display: flex;
+  gap: 16px;
+  overflow: hidden;
+  cursor: grab;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: pan-y;
+  padding: 55px 0;
+  margin: -55px 0;
+}
+.inspiration-item {
+  height: 400px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+.inspiration-item.is-active {
+  transform: scale(1.25);
+  z-index: 3;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+}
+.inspiration-img {
+  height: 100%;
+  width: auto;
+  display: block;
+  object-fit: cover;
 }
 
 .bring-grid {
@@ -528,9 +612,9 @@ body {
 [data-slot="traveller"] .tarot-card-inner { border-radius: 18px; }
 [data-slot="traveller"] .tarot-card-image { border-radius: 17px; }
 [data-slot="traveller"] .tarot-shine { border-radius: 17px; }
-[data-slot="arcana"] .tarot-card-inner { border-radius: 22px; }
-[data-slot="arcana"] .tarot-card-image { border-radius: 21px; }
-[data-slot="arcana"] .tarot-shine { border-radius: 21px; }
+[data-slot="arcana"] .tarot-card-inner { border-radius: 14px; }
+[data-slot="arcana"] .tarot-card-image { border-radius: 13px; }
+[data-slot="arcana"] .tarot-shine { border-radius: 13px; }
 .tarot-shine {
   position: absolute;
   inset: 0;
@@ -932,7 +1016,11 @@ body {
 /* ───────── Footer ───────── */
 .foot {
   text-align: center;
-  margin-top: 100px;
+  margin-top: -200px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 0;
   color: var(--ink-faint);
   font-family: 'Cormorant Garamond', serif;
   letter-spacing: 0.18em;
@@ -940,14 +1028,34 @@ body {
   font-size: 13px;
 }
 .foot-image {
-  margin: 0 -140px 40px;
-  border-radius: 44px;
+  position: relative;
+  margin: 0 calc(-50vw + 50%) 0;
   overflow: hidden;
+}
+.foot-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(to bottom, var(--bg) 0%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
 }
 .foot-image img {
   display: block;
   width: 100%;
   height: auto;
+}
+.foot-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 60px 24px 32px;
+  background: linear-gradient(to top, rgba(10, 8, 20, 0.85) 0%, rgba(10, 8, 20, 0.5) 60%, transparent 100%);
 }
 .foot p { margin: 6px 0; }
 .foot .div-svg { margin-bottom: 24px; color: var(--gold); }
@@ -996,13 +1104,14 @@ body {
     margin-top: 14px;
   }
 
-  .main { padding: 60px 0 80px; }
+  .main { padding: 0; }
   .main-inner { padding: 0 18px; }
   .intro { font-size: 17px; margin-bottom: 60px; margin-top: 40vh; }
   .intro-lead { font-size: 20px; }
   .intro-call { font-size: 22px; }
 
-  .location-image { margin: 0 calc(-45vw + 50%) 40px; border-radius: 16px; }
+  .location-image { display: none; }
+  [data-slot="realm"] { display: block; }
 
   .card-border { padding: 36px 18px 30px; }
   .card-corner { width: 36px; height: 36px; }
@@ -1012,18 +1121,41 @@ body {
   .section { margin: 0 0 48px; }
   .section.section-wide { margin-left: 0; margin-right: 0; }
   .section-grid,
-  .section-reverse .section-grid {
-    grid-template-columns: 1fr;
+  .section-reverse .section-grid,
+  .section-frameless .section-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 24px;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    text-align: center;
   }
-  .section-tarot {
-    max-width: 180px;
+  .section-grid .bullets {
+    text-align: left;
+  }
+  .section-prose .callout {
+    font-size: 19px;
+    padding-left: 16px;
+    margin: 20px 0;
+  }
+  .inspiration-carousel { margin-bottom: 48px; }
+  .inspiration-item { height: 50vh; border-radius: 8px; }
+  .inspiration-item.is-active { transform: none; box-shadow: none; z-index: auto; }
+  .inspiration-track { padding: 0; margin: 0; }
+  .inspiration-carousel::before,
+  .inspiration-carousel::after { width: 50px; }
+  .section-tarot,
+  .section-reverse .section-tarot,
+  .section-frameless .section-tarot {
+    position: static !important;
+    max-width: 70vw;
+    width: auto !important;
     margin: 0 auto;
     transform: rotate(-2deg);
   }
   .section-reverse .section-tarot {
     order: 0;
-    margin: 0 auto;
     transform: rotate(2deg);
   }
 
@@ -1039,6 +1171,8 @@ body {
   .form-nav { flex-direction: column-reverse; }
   .form-btn { width: 100%; }
 
-  .foot { margin-top: 60px; }
-  .foot-image { margin: 0 calc(-45vw + 50%) 30px; border-radius: 12px; }
+  .foot { margin-top: 0; }
+  .foot-image { margin: 0 calc(-50vw + 50%) 0; }
+  .foot-image::before { height: 80px; }
+  .foot-text { padding: 40px 16px 24px; }
 }

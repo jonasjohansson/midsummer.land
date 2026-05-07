@@ -19,12 +19,13 @@ interface CardSectionProps {
   children: React.ReactNode;
   reverse?: boolean;
   wide?: boolean;
+  frameless?: boolean;
   divider?: "star" | "line" | "moon";
 }
 
-export default function CardSection({ numeral, title, subtitle, tarot, children, reverse, wide, divider }: CardSectionProps) {
+export default function CardSection({ numeral, title, subtitle, tarot, children, reverse, wide, frameless, divider }: CardSectionProps) {
   return (
-    <section className={`section ${reverse ? "section-reverse" : ""} ${wide ? "section-wide" : ""}`}>
+    <section className={`section ${reverse ? "section-reverse" : ""} ${wide ? "section-wide" : ""} ${frameless ? "section-frameless" : ""}`}>
       <CardBorder numeral={numeral} title={title} subtitle={subtitle} divider={divider}>
         {tarot ? (
           <div className="section-grid">

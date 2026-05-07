@@ -41,8 +41,8 @@ export default function TarotCard({ numeral, name, slotId, hint, image }: TarotC
       const t = time * 0.001;
       const base = timeRef.current;
       idleRot.current = {
-        x: Math.sin(t * 0.7 + base) * 4 + Math.sin(t * 1.3 + base * 2) * 2,
-        y: Math.cos(t * 0.5 + base) * 5 + Math.cos(t * 1.1 + base * 3) * 2,
+        x: Math.sin(t * 0.7 + base) * 8 + Math.sin(t * 1.3 + base * 2) * 4 + Math.sin(t * 0.3 + base * 0.5) * 3,
+        y: Math.cos(t * 0.5 + base) * 10 + Math.cos(t * 1.1 + base * 3) * 4 + Math.cos(t * 0.2 + base * 1.5) * 3,
       };
       if (!hovering && innerRef.current) {
         innerRef.current.style.transform =
