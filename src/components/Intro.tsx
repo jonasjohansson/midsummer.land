@@ -19,7 +19,7 @@ export default function Intro() {
         What will the symbols reveal?
       </p>
       <p>But tread carefully: the meaning you make is the destiny you choose.</p>
-      <Divider variant="moon"/>
+      <Divider />
       <p className="intro-call">This midsummer, the veil will slip and the deck will open.</p>
       <p>
         As the land transforms into a living tarot of flowers, friends and fate, you are invited to step
