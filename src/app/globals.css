@@ -322,11 +322,12 @@ body {
   height: auto;
 }
 [data-slot="realm"] { display: none; }
-.section-grid:has([data-slot="realm"]) {
+.section-reverse .section-grid:has([data-slot="realm"]) {
   display: block;
   text-align: center;
+  padding: 0;
 }
-.section-grid:has([data-slot="realm"]) .section-prose {
+.section-reverse .section-grid:has([data-slot="realm"]) .section-prose {
   max-width: 680px;
   margin: 0 auto;
 }
@@ -472,7 +473,9 @@ body {
 .section-prose .callout {
   border-left: 2px solid var(--gold);
   padding: 4px 0 4px 20px;
-  margin: 24px 0;
+  margin: 24px auto;
+  display: inline-block;
+  text-align: left;
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-size: 21px;
