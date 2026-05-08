@@ -52,7 +52,7 @@ export default function SectionNav({ rsvpUrl }: SectionNavProps) {
           RSVP
           <svg viewBox="0 0 24 12" aria-hidden="true" className="section-nav-rsvp-flair">
             <line x1="0" y1="6" x2="14" y2="6" stroke="currentColor" strokeWidth="0.8"/>
-            <path d="M14 6 L20 2 L20 10 Z" fill="currentColor"/>
+            <path d="M14 2 L20 6 L14 10 Z" fill="currentColor"/>
           </svg>
         </a>
       </div>

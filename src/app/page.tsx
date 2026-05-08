@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import StarField from "@/components/StarField";
 import Header from "@/components/Header";
-import Intro from "@/components/Intro";
 import SectionNav from "@/components/SectionNav";
 import CardSection from "@/components/CardSection";
 import Divider from "@/components/Divider";
@@ -54,12 +53,9 @@ export default function Home() {
         style={{ marginTop: `${-2 - Math.min(scroll * 0.12, 140)}px` }}
       >
         <div className="main-inner">
-          <Intro />
-
           <CardSection
             id="the-arcana"
             title="The Arcana"
-
             tarot={{
               numeral: "",
               name: "The Arcana",
@@ -71,6 +67,10 @@ export default function Home() {
             frameless
             divider="moon"
           >
+            <p className="intro-stamp">A personal invitation</p>
+            <p className="intro-lead">
+              On the <span className="gold">19th of June</span>, a portal opens to a liminal space, accessible only to those willing to step through. And you have been summoned.
+            </p>
             <p>This is our <span className="gold">seventh</span> midsummer together.</p>
             <p>
               What began as a small gathering of friends has become a tradition: a weekend shaped by friendship, music, food, games, swimming, dancing, performances, late nights, collective imagination, and the strange magic that happens when everyone adds something of their own.
@@ -80,6 +80,9 @@ export default function Home() {
             </p>
             <p>
               Our home is <a className="inline-link gold" href="https://viback10.se/" target="_blank" rel="noopener noreferrer">Vibäck 10</a>, a former seaside guesthouse from 1938, tucked into Marsviken where the forest meets the water. For three days we take over its cabins, shore, sauna, paths, and gathering places. Arrive early on Friday and leave late on Sunday.
+            </p>
+            <p>
+              It&apos;s about <span className="gold">an hour and a half</span> south of Stockholm by car or train. The base contribution is <span className="gold">1400 SEK</span> per person, with a small surcharge if you&apos;d like a roof or a bed. More on both below.
             </p>
             <p>
               It is not something you attend from the outside. It is something we make together, moment by moment, until the ordinary world softens and another world begins to take shape.
@@ -461,7 +464,7 @@ export default function Home() {
               RSVP to the Arcana
               <svg viewBox="0 0 24 12" aria-hidden="true" className="cta-link-flair">
                 <line x1="0" y1="6" x2="14" y2="6" stroke="currentColor" strokeWidth="0.8"/>
-                <path d="M14 6 L20 2 L20 10 Z" fill="currentColor"/>
+                <path d="M14 2 L20 6 L14 10 Z" fill="currentColor"/>
               </svg>
             </a>
           </section>

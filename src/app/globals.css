@@ -1477,8 +1477,8 @@ html { scroll-behavior: smooth; }
   }
   .intro {
     font-size: var(--text-base);
-    margin-bottom: 40px;
-    margin-top: 40vh;
+    margin-bottom: var(--space-7);
+    margin-top: var(--space-6);
     line-height: 1.4;
     text-align: left;
     overflow-wrap: break-word;
