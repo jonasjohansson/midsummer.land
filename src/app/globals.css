@@ -1371,7 +1371,7 @@ html { scroll-behavior: smooth; }
 /* ───────── Footer ───────── */
 .foot {
   text-align: center;
-  margin-top: -300px;
+  margin-top: 0;
   padding-bottom: 0;
   margin-bottom: 0;
   position: relative;
