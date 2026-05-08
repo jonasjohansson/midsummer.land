@@ -1130,19 +1130,24 @@ body {
 
   .main { padding: 0; }
   .main-inner { padding: 0 18px; }
-  .intro { font-size: 17px; margin-bottom: 60px; margin-top: 40vh; }
-  .intro-lead { font-size: 20px; }
-  .intro-call { font-size: 22px; }
+  .intro { font-size: 16px; margin-bottom: 40px; margin-top: 40vh; line-height: 1.55; }
+  .intro p { margin: 0 0 14px; }
+  .intro-lead { font-size: 19px; margin-bottom: 18px !important; }
+  .intro-call { font-size: 20px; margin: 24px 0 !important; }
+  .intro-coda { font-size: 20px; margin-top: 24px !important; }
+  .intro-questions { font-size: 18px; line-height: 1.7; }
 
   .location-image { display: none; }
   [data-slot="realm"] { display: block; }
 
-  .card-border { padding: 36px 18px 30px; }
+  .card-border { padding: 28px 16px 24px; }
   .card-corner { width: 36px; height: 36px; }
   .card-title { font-size: clamp(28px, 7vw, 44px); }
   .card-numeral { font-size: 11px; }
 
-  .section { margin: 0 0 48px; }
+  .section { margin: 0 0 36px; }
+  .section-prose p { margin: 0 0 12px; line-height: 1.55; }
+  .section-prose .muted { font-size: 15px; }
   .section.section-wide { margin-left: 0; margin-right: 0; }
   .section-grid,
   .section-reverse .section-grid,
@@ -1160,9 +1165,10 @@ body {
     text-align: left;
   }
   .section-prose .callout {
-    font-size: 19px;
-    padding-left: 16px;
-    margin: 20px 0;
+    font-size: 18px;
+    padding-left: 14px;
+    margin: 14px 0;
+    line-height: 1.55;
   }
   .inspiration-carousel { margin-bottom: 48px; }
   .inspiration-item { height: 50vh; border-radius: 8px; }
