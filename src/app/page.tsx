@@ -309,8 +309,8 @@ export default function Home() {
             <p>
               From Stockholm, the road south unfolds for roughly{" "}
               <strong>an hour and a half</strong>. Trains run to{" "}
-              <span className="gold">Nyköping</span>; from there, omens (and a
-              short drive) carry you the final leg.
+              <span className="gold">Nyköping</span>; from there, omens (and a short drive) carry you the final leg.{" "}
+              <a className="inline-link" href="https://www.google.com/maps/dir/T-Centralen,+111+20+Stockholm/Vib%C3%A4ck10+AB,+Vib%C3%A4ck+1,+611+95+Nyk%C3%B6ping" target="_blank" rel="noopener noreferrer">View driving directions</a>.
             </p>
             <ul className="bullets">
               <li>
@@ -390,7 +390,7 @@ export default function Home() {
               </li>
             </ul>
             <p>
-              <a className="inline-link" href="https://viback10.se/" target="_blank" rel="noopener noreferrer">Vibäck</a> holds eight cabins, with room for about <span className="gold">40 people in beds</span> and <span className="gold">15 on the floor</span>. All cabins but one have a toilet and kitchen, which others may pass through to use. A separate service house holds two more toilets and showers. Beyond the cabins, the realm opens into forest and shore with plenty of room for tents and trees for hammocks. <a className="inline-link" href="https://www.google.com/maps/dir/T-Centralen,+111+20+Stockholm/Vib%C3%A4ck10+AB,+Vib%C3%A4ck+1,+611+95+Nyk%C3%B6ping" target="_blank" rel="noopener noreferrer">Driving directions from Stockholm</a>. Camping is the easiest way in and the most generous in space.
+              <a className="inline-link" href="https://viback10.se/" target="_blank" rel="noopener noreferrer">Vibäck</a> holds eight cabins, with room for about <span className="gold">40 people in beds</span> and <span className="gold">15 on the floor</span>. All cabins but one have a toilet and kitchen, which others may pass through to use. A separate service house holds two more toilets and showers. Beyond the cabins, the realm opens into forest and shore with plenty of room for tents and trees for hammocks. Camping is the easiest way in and the most generous in space.
             </p>
             <p>
               Indicate your preferred sleeping option in the{" "}
