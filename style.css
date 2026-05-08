@@ -1,4 +1,4 @@
-@import "tailwindcss";
+
 
 :root {
   --bg: #1e1d3c;
@@ -17,10 +17,10 @@
   --border: rgba(212, 168, 87, 0.55);
   --border-soft: rgba(212, 168, 87, 0.25);
 
-  --font-body: var(--font-eb-garamond), 'EB Garamond', Georgia, serif;
-  --font-prose: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
-  --font-stamp: var(--font-cinzel), 'Cormorant Garamond', serif;
-  --font-display: var(--font-bodoni), var(--font-cinzel), 'Cormorant Garamond', serif;
+  --font-body: 'EB Garamond', Georgia, serif;
+  --font-prose: 'Cormorant Garamond', Georgia, serif;
+  --font-stamp: 'Cinzel', 'Cormorant Garamond', serif;
+  --font-display: 'Bodoni Moda', 'Cinzel', 'Cormorant Garamond', serif;
 
   --tracking-stamp: 0.32em;
   --tracking-stamp-tight: 0.18em;

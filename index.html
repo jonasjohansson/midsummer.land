@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Midsummerland 2026</title>
+  <meta name="description" content="A dream drawn by fate. Midsummer gathering, 19 to 21 June 2026, Vibäck, Nyköping." />
+  <link rel="icon" href="/favicon.png" />
+  <meta property="og:title" content="Midsummerland 2026" />
+  <meta property="og:description" content="A dream drawn by fate. 19 to 21 June 2026, Vibäck, Nyköping." />
+  <meta property="og:image" content="https://midsummer.land/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Midsummerland 2026" />
+  <meta name="twitter:description" content="A dream drawn by fate. 19 to 21 June 2026, Vibäck, Nyköping." />
+  <meta name="twitter:image" content="https://midsummer.land/assets/og-image.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Cinzel:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Bodoni+Moda:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="app">
+    <div class="stars" id="starfield" aria-hidden="true"></div>
+
+    <header class="hero">
+      <div class="hero-img-wrap">
+        <picture>
+          <source media="(max-width: 720px)" srcset="/assets/header-banner-mobile.jpg" />
+          <img src="/assets/header-banner.jpg" alt="Bangers' Arcana, sun and moon at twilight" class="hero-img" id="hero-img" />
+        </picture>
+        <p class="hero-eyebrow" id="hero-eyebrow">
+          <span>Midsummerland</span>
+          <span class="hero-presents">
+            <svg class="hero-flair" viewBox="0 0 60 12" aria-hidden="true"><line x1="0" y1="6" x2="20" y2="6" stroke="currentColor" stroke-width="0.6" /><path d="M24 6 L27 3 L30 6 L27 9 Z" fill="none" stroke="currentColor" stroke-width="0.6" /><circle cx="27" cy="6" r="1.2" fill="currentColor" /><line x1="34" y1="6" x2="42" y2="6" stroke="currentColor" stroke-width="0.6" /><circle cx="46" cy="6" r="1.5" fill="currentColor" /><line x1="50" y1="6" x2="60" y2="6" stroke="currentColor" stroke-width="0.6" /></svg>
+            presents
+            <svg class="hero-flair" viewBox="0 0 60 12" aria-hidden="true"><line x1="0" y1="6" x2="10" y2="6" stroke="currentColor" stroke-width="0.6" /><circle cx="14" cy="6" r="1.5" fill="currentColor" /><line x1="18" y1="6" x2="26" y2="6" stroke="currentColor" stroke-width="0.6" /><path d="M30 6 L33 3 L36 6 L33 9 Z" fill="none" stroke="currentColor" stroke-width="0.6" /><circle cx="33" cy="6" r="1.2" fill="currentColor" /><line x1="40" y1="6" x2="60" y2="6" stroke="currentColor" stroke-width="0.6" /></svg>
+          </span>
+        </p>
+        <div class="hero-text" id="hero-text">
+          <h1 class="hero-title">
+            <span class="hero-title-1">The</span>
+            <span class="hero-title-2">Arcana</span>
+          </h1>
+          <div class="hero-rule">
+            <svg viewBox="0 0 200 16" aria-hidden="true"><line x1="0" y1="8" x2="86" y2="8" stroke="currentColor" stroke-width="0.6" /><path d="M100 0 L102 7 L109 8 L102 9 L100 16 L98 9 L91 8 L98 7 Z" fill="currentColor" /><line x1="114" y1="8" x2="200" y2="8" stroke="currentColor" stroke-width="0.6" /></svg>
+          </div>
+          <p class="hero-sub">A dream drawn by fate</p>
+          <div class="hero-details">
+            <p>19 to 21 June 2026</p>
+            <p>Vibäck, Nyköping</p>
+          </div>
+          <a class="hero-cta" href="https://forms.gle/rsygitJ4sSk2fLrV6" target="_blank" rel="noopener noreferrer">
+            <span>RSVP to the Arcana</span>
+            <svg viewBox="0 0 24 12" aria-hidden="true" class="hero-cta-flair"><line x1="0" y1="6" x2="14" y2="6" stroke="currentColor" stroke-width="0.8" /><path d="M14 2 L20 6 L14 10 Z" fill="currentColor" /></svg>
+          </a>
+          <audio id="theme-audio" src="/audio/arcana-theme.mp3" loop preload="none"></audio>
+          <button type="button" id="audio-toggle" class="audio-link" aria-label="Play the theme">
+            <span class="audio-link-bars" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+            <span class="audio-link-label">Play the theme</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="section-nav" id="section-nav" aria-hidden="true">
+      <div class="section-nav-inner">
+        <nav class="section-nav-list-wrap" aria-label="Sections">
+          <ul class="section-nav-list">
+            <li><a href="#the-arcana"><span class="section-nav-numeral">✦</span><span class="section-nav-label">Arcana</span></a></li>
+            <li><a href="#the-offering"><span class="section-nav-numeral">I</span><span class="section-nav-label">Offering</span></a></li>
+            <li><a href="#the-masquerade"><span class="section-nav-numeral">II</span><span class="section-nav-label">Masquerade</span></a></li>
+            <li><a href="#the-traveller"><span class="section-nav-numeral">III</span><span class="section-nav-label">Traveller</span></a></li>
+            <li><a href="#the-feast"><span class="section-nav-numeral">IV</span><span class="section-nav-label">Feast</span></a></li>
+            <li><a href="#the-coin"><span class="section-nav-numeral">V</span><span class="section-nav-label">Coin</span></a></li>
+            <li><a href="#the-satchel"><span class="section-nav-numeral">✦</span><span class="section-nav-label">Satchel</span></a></li>
+          </ul>
+        </nav>
+        <a class="section-nav-rsvp" href="https://forms.gle/rsygitJ4sSk2fLrV6" target="_blank" rel="noopener noreferrer">
+          RSVP
+          <svg viewBox="0 0 24 12" aria-hidden="true" class="section-nav-rsvp-flair"><line x1="0" y1="6" x2="14" y2="6" stroke="currentColor" stroke-width="0.8" /><path d="M14 2 L20 6 L14 10 Z" fill="currentColor" /></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="scroll-arrow" id="scroll-arrow" aria-hidden="true">
+      <svg viewBox="0 0 60 80" class="scroll-arrow-svg"><path d="M30 2 L31.2 6.5 L36 8 L31.2 9.5 L30 14 L28.8 9.5 L24 8 L28.8 6.5 Z" fill="currentColor" opacity="0.8" /><line x1="30" y1="18" x2="30" y2="52" stroke="currentColor" stroke-width="0.8" /><path d="M30 58 L34 50 L30 53 L26 50 Z" fill="currentColor" /></svg>
+    </div>
+
+    <main class="main" id="main">
+      <div class="main-inner">
+        <section class="summons">
+          <p class="intro-stamp">A personal invitation</p>
+          <p class="intro-lead">
+            On the <span class="gold">19th of June</span>, a portal opens to a liminal space, accessible only to those willing to step through. And you have been summoned.
+          </p>
+        </section>
+
+        <section class="section section-wide section-frameless" id="the-arcana">
+          <div class="card-border">
+            <div class="card-head">
+              <svg class="div-svg" viewBox="0 0 200 16" aria-hidden="true"><line x1="0" y1="8" x2="86" y2="8" stroke="currentColor" stroke-width="0.6" /><g transform="rotate(-20, 100, 8)"><circle cx="100" cy="8" r="7" fill="currentColor" /><circle cx="103" cy="7" r="5" fill="#1e1d3c" /></g><line x1="114" y1="8" x2="200" y2="8" stroke="currentColor" stroke-width="0.6" /></svg>
+              <h2 class="card-title">The Arcana</h2>
+            </div>
+            <div class="card-body">
+              <div class="section-grid">
+                <div class="section-tarot">
+                  <div class="tarot-card tarot-card-with-image" data-slot="arcana">
+                    <div class="tarot-card-inner tarot-card-has-image">
+                      <img src="/assets/the-arcana.jpg" alt="The Arcana" class="tarot-card-image" />
+                    </div>
+                  </div>
+                </div>
+                <div class="section-prose">
+                  <p>This is our <span class="gold">seventh</span> midsummer together.</p>
+                  <p>What began as a small gathering of friends has become a tradition: a weekend shaped by friendship, music, food, games, swimming, dancing, performances, late nights, collective imagination, and the strange magic that happens when everyone adds something of their own.</p>
+                  <p>This year, that world becomes <span class="gold">The Arcana</span>: a midsummer of fate, friendship, symbols, stories, and the space between dream and ritual.</p>
+                  <p>Our home is <a class="inline-link gold" href="https://viback10.se/" target="_blank" rel="noopener noreferrer">Vibäck 10</a>, a former seaside guesthouse from 1938, tucked into Marsviken where the forest meets the water. For three days we take over its cabins, shore, sauna, paths, and gathering places. Arrive early on Friday and leave late on Sunday.</p>
+                  <p>It&rsquo;s about <span class="gold">an hour and a half</span> south of Stockholm by car or train. The base contribution is <span class="gold">1400 SEK</span> per person, with a small surcharge if you&rsquo;d like a roof or a bed. More on both below.</p>
+                  <p>It is not something you attend from the outside. It is something we make together, moment by moment, until the ordinary world softens and another world begins to take shape.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="location-image">
+          <picture>
+            <source media="(max-width: 720px)" srcset="/assets/arcana-location-mobile.jpg" />
+            <img src="/assets/arcana-location.png" alt="Red Swedish cabins by the archipelago at twilight" />
+          </picture>
+        </div>
+
+        <section class="section" id="the-offering">
+          <div class="card-border">
+            <svg class="card-corner tl" viewBox="0 0 60 60" aria-hidden="true"><path d="M2 2 L58 2 M2 2 L2 58" stroke="#d4a857" stroke-width="1" fill="none"/><path d="M6 6 L54 6 M6 6 L6 54" stroke="#d4a857" stroke-width="0.5" fill="none" opacity="0.6"/><circle cx="10" cy="10" r="1.5" fill="#d4a857"/><path d="M14 10 L26 10 M10 14 L10 26" stroke="#d4a857" stroke-width="0.5"/><path d="M18 10 L20 8 L22 10 L20 12 Z" fill="#d4a857" opacity="0.7"/><path d="M10 18 L12 16 L14 18 L12 20 Z" fill="#d4a857" opacity="0.7"/></svg>
+            <svg class="card-corner tr" viewBox="0 0 60 60" aria-hidden="true"><path d="M58 2 L2 2 M58 2 L58 58" stroke="#d4a857" stroke-width="1" fill="none"/><path d="M54 6 L6 6 M54 6 L54 54" stroke="#d4a857" stroke-width="0.5" fill="none" opacity="0.6"/><circle cx="50" cy="10" r="1.5" fill="#d4a857"/><path d="M46 10 L34 10 M50 14 L50 26" stroke="#d4a857" stroke-width="0.5"/><path d="M42 10 L40 8 L38 10 L40 12 Z" fill="#d4a857" opacity="0.7"/><path d="M50 18 L48 16 L46 18 L48 20 Z" fill="#d4a857" opacity="0.7"/></svg>
+            <svg class="card-corner bl" viewBox="0 0 60 60" aria-hidden="true"><path d="M2 58 L58 58 M2 58 L2 2" stroke="#d4a857" stroke-width="1" fill="none"/><path d="M6 54 L54 54 M6 54 L6 6" stroke="#d4a857" stroke-width="0.5" fill="none" opacity="0.6"/><circle cx="10" cy="50" r="1.5" fill="#d4a857"/></svg>
+            <svg class="card-corner br" viewBox="0 0 60 60" aria-hidden="true"><path d="M58 58 L2 58 M58 58 L58 2" stroke="#d4a857" stroke-width="1" fill="none"/><path d="M54 54 L6 54 M54 54 L54 6" stroke="#d4a857" stroke-width="0.5" fill="none" opacity="0.6"/><circle cx="50" cy="50" r="1.5" fill="#d4a857"/></svg>
+            <div class="card-head">
+              <div class="card-numeral">I</div>
+              <svg class="div-svg" viewBox="0 0 200 16" aria-hidden="true"><line x1="0" y1="8" x2="86" y2="8" stroke="currentColor" stroke-width="0.6"/><path d="M100 0 L102 7 L109 8 L102 9 L100 16 L98 9 L91 8 L98 7 Z" fill="currentColor"/><line x1="114" y1="8" x2="200" y2="8" stroke="currentColor" stroke-width="0.6"/></svg>
+              <h2 class="card-title">The Offering</h2>
+            </div>
+            <div class="card-body">
+              <div class="section-grid">
+                <div class="section-tarot">
+                  <div class="tarot-card tarot-card-with-image" data-slot="offering">
+                    <div class="tarot-card-inner tarot-card-has-image">
+                      <img src="/assets/the-offering.jpg" alt="The Offering" class="tarot-card-image" />
+                    </div>
+                  </div>
+                </div>
+                <div class="section-prose">
+                  <p>The Arcana is not built by hosts alone. It comes alive through the <strong>offerings carried across the threshold</strong>.</p>
+                  <p class="callout">Bring a song, a game, a reading, a ritual, a performance, a hidden talent, a helping hand, or a small piece of magic only you could summon.</p>
+                  <p>Some offerings will be written into the weekend. Others will reveal themselves when the moment calls. When you <a class="inline-link" href="https://forms.gle/rsygitJ4sSk2fLrV6" target="_blank" rel="noopener noreferrer">RSVP</a>, tell us what you might bring into the Arcana.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-reverse" id="the-masquerade">
+          <div class="card-border">
+            <svg class="card-corner tl" viewBox="0 0 60 60" aria-hidden="true"><path d="M2 2 L58 2 M2 2 L2 58" stroke="#d4a857" stroke-width="1" fill="none"/><path d="M6 6 L54 6 M6 6 L6 54" stroke="#d4a857" stroke-width="0.5" fill="none" opacity="0.6"/><circle cx="10" cy="10" r="1.5" fill="#d4a857"/><path d="M14 10 L26 10 M10 14 L10 26" stroke="#d4a857" stroke-width="0.5"/><path d="M18 10 L20 8 L22 10 L20 12 Z" fill="#d4a857" opacity="0.7"/><path d="M10 18 L12 16 L14 18 L12 20 Z" fill="#d4a857" opacity="0.7"/></svg>
+            <svg class="card-corner tr" viewBox="0 0 60 60" aria-hidden="true"><path d="M58 2 L2 2 M58 2 L58 58" stroke="#d4a857" stroke-width="1" fill="none"/><path d="M54 6 L6 6 M54 6 L54 54" stroke="#d4a857" stroke-width="0.5" fill="none" opacity="0.6"/><circle cx="50" cy="10" r="1.5" fill="#d4a857"/><path d="M46 10 L34 10 M50 14 L50 26" stroke="#d4a857" stroke-width="0.5"/><path d="M42 10 L40 8 L38 10 L40 12 Z" fill="#d4a857" opacity="0.7"/><path d="M50 18 L48 16 L46 18 L48 20 Z" fill="#d4a857" opacity="0.7"/></svg>
+            <svg class="card-corner bl" viewBox="0 0 60 60" aria-hidden="true"><path d="M2 58 L58 58 M2 58 L2 2" stroke="#d4a857" stroke-width="1" fill="none"/><path d="M6 54 L54 54 M6 54 L6 6" stroke="#d4a857" stroke-width="0.5" fill="none" opacity="0.6"/><circle cx="10" cy="50" r="1.5" fill="#d4a857"/></svg>
+            <svg class="card-corner br" viewBox="0 0 60 60" aria-hidden="true"><path d="M58 58 L2 58 M58 58 L58 2" stroke="#d4a857" stroke-width="1" fill="none"/><path d="M54 54 L6 54 M54 54 L54 6" stroke="#d4a857" stroke-width="0.5" fill="none" opacity="0.6"/><circle cx="50" cy="50" r="1.5" fill="#d4a857"/></svg>
+            <div class="card-head">
+              <div class="card-numeral">II</div>
+              <svg class="div-svg" viewBox="0 0 200 16" aria-hidden="true"><line x1="0" y1="8" x2="86" y2="8" stroke="currentColor" stroke-width="0.6"/><path d="M100 0 L102 7 L109 8 L102 9 L100 16 L98 9 L91 8 L98 7 Z" fill="currentColor"/><line x1="114" y1="8" x2="200" y2="8" stroke="currentColor" stroke-width="0.6"/></svg>
+              <h2 class="card-title">The Masquerade</h2>
+            </div>
+            <div class="card-body">
+              <div class="section-grid">
+                <div class="section-tarot">
+                  <div class="tarot-card tarot-card-with-image" data-slot="masquerade">
+                    <div class="tarot-card-inner tarot-card-has-image">
+                      <img src="/assets/the-masquerade.jpg" alt="The Masquerade" class="tarot-card-image" />
+                    </div>
+                  </div>
+                </div>
+                <div class="section-prose">
+                  <p>This is a <strong>costumed gathering</strong>. Choose a card, archetype, symbol, omen, creature, character, or invented piece of the Arcana, and let it guide what you become.</p>
+                  <p>You might arrive as <span class="gold">The Fool, The Star, The Moon, The Lovers, The Tower, The Hermit</span>, a knight, a queen, a cup, a sword, a flower, a flame, a shadow, a sign, or something no deck has named before.</p>
+                  <p>Bring fabric, flowers, masks, symbols, props, movement, mystery. The world becomes richer when everyone adds to the illusion.</p>
+                  <p class="muted">Decorations are welcome too. If you have an object, banner, lantern, altar, garland, card, creature, or curious thing that belongs in the Arcana, bring it through the veil.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="inspiration-carousel">
+          <div class="inspiration-track" id="inspiration-track"></div>
+        </div>
+
+        <section class="section" id="the-traveller">
+          <div class="card-border">
+            <svg class="card-corner tl" viewBox="0 0 60 60" aria-hidden="true"><path d="M2 2 L58 2 M2 2 L2 58" stroke="#d4a857" stroke-width="1" fill="none"/><path d="M6 6 L54 6 M6 6 L6 54" stroke="#d4a857" stroke-width="0.5" fill="none" opacity="0.6"/><circle cx="10" cy="10" r="1.5" fill="#d4a857"/><path d="M14 10 L26 10 M10 14 L10 26" stroke="#d4a857" stroke-width="0.5"/><path d="M18 10 L20 8 L22 10 L20 12 Z" fill="#d4a857" opacity="0.7"/><path d="M10 18 L12 16 L14 18 L12 20 Z" fill="#d4a857" opacity="0.7"/></svg>
+            <svg class="card-corner tr" viewBox="0 0 60 60" aria-hidden="true"><path d="M58 2 L2 2 M58 2 L58 58" stroke="#d4a857" stroke-width="1" fill="none"/><path d="M54 6 L6 6 M54 6 L54 54" stroke="#d4a857" stroke-width="0.5" fill="none" opacity="0.6"/><circle cx="50" cy="10" r="1.5" fill="#d4a857"/><path d="M46 10 L34 10 M50 14 L50 26" stroke="#d4a857" stroke-width="0.5"/><path d="M42 10 L40 8 L38 10 L40 12 Z" fill="#d4a857" opacity="0.7"/><path d="M50 18 L48 16 L46 18 L48 20 Z" fill="#d4a857" opacity="0.7"/></svg>
+            <svg class="card-corner bl" viewBox="0 0 60 60" aria-hidden="true"><path d="M2 58 L58 58 M2 58 L2 2" stroke="#d4a857" stroke-width="1" fill="none"/><path d="M6 54 L54 54 M6 54 L6 6" stroke="#d4a857" stroke-width="0.5" fill="none" opacity="0.6"/><circle cx="10" cy="50" r="1.5" fill="#d4a857"/></svg>
+            <svg class="card-corner br" viewBox="0 0 60 60" aria-hidden="true"><path d="M58 58 L2 58 M58 58 L58 2" stroke="#d4a857" stroke-width="1" fill="none"/><path d="M54 54 L6 54 M54 54 L54 6" stroke="#d4a857" stroke-width="0.5" fill="none" opacity="0.6"/><circle cx="50" cy="50" r="1.5" fill="#d4a857"/></svg>
+            <div class="card-head">
+              <div class="card-numeral">III</div>
+              <svg class="div-svg" viewBox="0 0 200 16" aria-hidden="true"><line x1="0" y1="8" x2="86" y2="8" stroke="currentColor" stroke-width="0.6"/><path d="M100 0 L102 7 L109 8 L102 9 L100 16 L98 9 L91 8 L98 7 Z" fill="currentColor"/><line x1="114" y1="8" x2="200" y2="8" stroke="currentColor" stroke-width="0.6"/></svg>
+              <h2 class="card-title">The Traveller</h2>
+            </div>
+            <div class="card-body">
+              <div class="section-grid">
+                <div class="section-tarot">
+                  <div class="tarot-card tarot-card-with-image" data-slot="traveller">
+                    <div class="tarot-card-inner tarot-card-has-image">
+                      <img src="/assets/the-traveller.jpg" alt="The Traveller" class="tarot-card-image" />
+                    </div>
+                  </div>
+                </div>
+                <div class="section-prose">
+                  <p>From Stockholm, the road south unfolds for roughly <strong>an hour and a half</strong>. Trains run to <span class="gold">Nyköping</span>; from there, omens (and a short drive) carry you the final leg. <a class="inline-link" href="https://www.google.com/maps/dir/T-Centralen,+111+20+Stockholm/Vib%C3%A4ck10+AB,+Vib%C3%A4ck+1,+611+95+Nyk%C3%B6ping" target="_blank" rel="noopener noreferrer">View driving directions</a>.</p>
+                  <ul class="bullets">
+                    <li><strong>Car.</strong> Easiest, with parking by the cabin.</li>
+                    <li><strong>Train.</strong> To Nyköping C, then a <span class="gold">25 min</span> taxi or pickup.</li>
+                    <li><strong>Carpool.</strong> Closer to the date we&rsquo;ll open a shared chat where drivers and travellers can find each other. More details to follow.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-reverse" id="the-feast">
+          <div class="card-border">
+            <svg class="card-corner tl" viewBox="0 0 60 60" aria-hidden="true"><path d="M2 2 L58 2 M2 2 L2 58" stroke="#d4a857" stroke-width="1" fill="none"/><path d="M6 6 L54 6 M6 6 L6 54" stroke="#d4a857" stroke-width="0.5" fill="none" opacity="0.6"/><circle cx="10" cy="10" r="1.5" fill="#d4a857"/><path d="M14 10 L26 10 M10 14 L10 26" stroke="#d4a857" stroke-width="0.5"/><path d="M18 10 L20 8 L22 10 L20 12 Z" fill="#d4a857" opacity="0.7"/><path d="M10 18 L12 16 L14 18 L12 20 Z" fill="#d4a857" opacity="0.7"/></svg>
+            <svg class="card-corner tr" viewBox="0 0 60 60" aria-hidden="true"><path d="M58 2 L2 2 M58 2 L58 58" stroke="#d4a857" stroke-width="1" fill="none"/><path d="M54 6 L6 6 M54 6 L54 54" stroke="#d4a857" stroke-width="0.5" fill="none" opacity="0.6"/><circle cx="50" cy="10" r="1.5" fill="#d4a857"/><path d="M46 10 L34 10 M50 14 L50 26" stroke="#d4a857" stroke-width="0.5"/><path d="M42 10 L40 8 L38 10 L40 12 Z" fill="#d4a857" opacity="0.7"/><path d="M50 18 L48 16 L46 18 L48 20 Z" fill="#d4a857" opacity="0.7"/></svg>
+            <svg class="card-corner bl" viewBox="0 0 60 60" aria-hidden="true"><path d="M2 58 L58 58 M2 58 L2 2" stroke="#d4a857" stroke-width="1" fill="none"/><path d="M6 54 L54 54 M6 54 L6 6" stroke="#d4a857" stroke-width="0.5" fill="none" opacity="0.6"/><circle cx="10" cy="50" r="1.5" fill="#d4a857"/></svg>
+            <svg class="card-corner br" viewBox="0 0 60 60" aria-hidden="true"><path d="M58 58 L2 58 M58 58 L58 2" stroke="#d4a857" stroke-width="1" fill="none"/><path d="M54 54 L6 54 M54 54 L54 6" stroke="#d4a857" stroke-width="0.5" fill="none" opacity="0.6"/><circle cx="50" cy="50" r="1.5" fill="#d4a857"/></svg>
+            <div class="card-head">
+              <div class="card-numeral">IV</div>
+              <svg class="div-svg" viewBox="0 0 200 16" aria-hidden="true"><line x1="0" y1="8" x2="86" y2="8" stroke="currentColor" stroke-width="0.6"/><path d="M100 0 L102 7 L109 8 L102 9 L100 16 L98 9 L91 8 L98 7 Z" fill="currentColor"/><line x1="114" y1="8" x2="200" y2="8" stroke="currentColor" stroke-width="0.6"/></svg>
+              <h2 class="card-title">The Feast</h2>
+            </div>
+            <div class="card-body">
+              <div class="section-grid">
+                <div class="section-tarot">
+                  <div class="tarot-card tarot-card-with-image" data-slot="feast">
+                    <div class="tarot-card-inner tarot-card-has-image">
+                      <img src="/assets/the-feast.jpg" alt="The Feast" class="tarot-card-image" />
+                    </div>
+                  </div>
+                </div>
+                <div class="section-prose">
+                  <p>Across the weekend, the Arcana provides the ingredients and recipes for shared meals. Food teams take turns in the kitchen, cooking them together.</p>
+                  <p class="callout">The main feast is Friday&rsquo;s midsummer lunch. Everyone is invited to bring one dish to share.</p>
+                  <p>Something traditional, beloved, strange, seasonal, or simply delicious. The shared menu will be built around <strong>vegetarian food</strong>, but if your personal prophecy requires meat, you are welcome to bring it yourself.</p>
+                  <p>There will also be a magical bar experience, with some drinks provided by the house. Please bring offerings for the bar: bottles, mixers, garnishes, strange spirits, soft drinks, or anything you would like to see appear in the cup.</p>
+                  <p>Mark your dietary needs in the <a class="inline-link" href="https://forms.gle/rsygitJ4sSk2fLrV6" target="_blank" rel="noopener noreferrer">RSVP</a> so the feast can welcome everyone.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="the-coin">
+          <div class="card-border">
+            <svg class="card-corner tl" viewBox="0 0 60 60" aria-hidden="true"><path d="M2 2 L58 2 M2 2 L2 58" stroke="#d4a857" stroke-width="1" fill="none"/><path d="M6 6 L54 6 M6 6 L6 54" stroke="#d4a857" stroke-width="0.5" fill="none" opacity="0.6"/><circle cx="10" cy="10" r="1.5" fill="#d4a857"/><path d="M14 10 L26 10 M10 14 L10 26" stroke="#d4a857" stroke-width="0.5"/><path d="M18 10 L20 8 L22 10 L20 12 Z" fill="#d4a857" opacity="0.7"/><path d="M10 18 L12 16 L14 18 L12 20 Z" fill="#d4a857" opacity="0.7"/></svg>
+            <svg class="card-corner tr" viewBox="0 0 60 60" aria-hidden="true"><path d="M58 2 L2 2 M58 2 L58 58" stroke="#d4a857" stroke-width="1" fill="none"/><path d="M54 6 L6 6 M54 6 L54 54" stroke="#d4a857" stroke-width="0.5" fill="none" opacity="0.6"/><circle cx="50" cy="10" r="1.5" fill="#d4a857"/><path d="M46 10 L34 10 M50 14 L50 26" stroke="#d4a857" stroke-width="0.5"/><path d="M42 10 L40 8 L38 10 L40 12 Z" fill="#d4a857" opacity="0.7"/><path d="M50 18 L48 16 L46 18 L48 20 Z" fill="#d4a857" opacity="0.7"/></svg>
+            <svg class="card-corner bl" viewBox="0 0 60 60" aria-hidden="true"><path d="M2 58 L58 58 M2 58 L2 2" stroke="#d4a857" stroke-width="1" fill="none"/><path d="M6 54 L54 54 M6 54 L6 6" stroke="#d4a857" stroke-width="0.5" fill="none" opacity="0.6"/><circle cx="10" cy="50" r="1.5" fill="#d4a857"/></svg>
+            <svg class="card-corner br" viewBox="0 0 60 60" aria-hidden="true"><path d="M58 58 L2 58 M58 58 L58 2" stroke="#d4a857" stroke-width="1" fill="none"/><path d="M54 54 L6 54 M54 54 L54 6" stroke="#d4a857" stroke-width="0.5" fill="none" opacity="0.6"/><circle cx="50" cy="50" r="1.5" fill="#d4a857"/></svg>
+            <div class="card-head">
+              <div class="card-numeral">V</div>
+              <svg class="div-svg" viewBox="0 0 200 16" aria-hidden="true"><line x1="0" y1="8" x2="86" y2="8" stroke="currentColor" stroke-width="0.6"/><path d="M100 0 L102 7 L109 8 L102 9 L100 16 L98 9 L91 8 L98 7 Z" fill="currentColor"/><line x1="114" y1="8" x2="200" y2="8" stroke="currentColor" stroke-width="0.6"/></svg>
+              <h2 class="card-title">The Coin</h2>
+            </div>
+            <div class="card-body">
+              <div class="section-grid">
+                <div class="section-tarot">
+                  <div class="tarot-card tarot-card-with-image" data-slot="coin">
+                    <div class="tarot-card-inner tarot-card-has-image">
+                      <img src="/assets/the-coin.jpg" alt="The Coin" class="tarot-card-image" />
+                    </div>
+                  </div>
+                </div>
+                <div class="section-prose">
+                  <p>The Arcana is built together. The contribution is <span class="gold">1400 SEK</span> per person for the event itself, which covers <a class="inline-link" href="https://viback10.se/" target="_blank" rel="noopener noreferrer">Vibäck</a>, shared meals, the bar, decorations, the circus tent, lights, sound, and the materials that bring the weekend to life. A roof or a bed adds a small surcharge on top.</p>
+                  <ul class="bullets">
+                    <li><strong>Tent · <span class="gold">Free</span></strong><br />A place beneath your own tent.</li>
+                    <li><strong>Floor · <span class="gold">400 SEK</span></strong><br />A roof above, a sleeping mat below.</li>
+                    <li><strong>Bed · <span class="gold">800 SEK</span></strong><br />A bed within the cabin walls.</li>
+                  </ul>
+                  <p><a class="inline-link" href="https://viback10.se/" target="_blank" rel="noopener noreferrer">Vibäck</a> holds eight cabins, with room for about <span class="gold">40 people in beds</span> and <span class="gold">15 on the floor</span>. All cabins but one have a toilet and kitchen, which others may pass through to use. A separate service house holds two more toilets and showers. Beyond the cabins, the realm opens into forest and shore with plenty of room for tents and trees for hammocks. Camping is the easiest way in and the most generous in space.</p>
+                  <p>Indicate your preferred sleeping option in the <a class="inline-link" href="https://forms.gle/rsygitJ4sSk2fLrV6" target="_blank" rel="noopener noreferrer">RSVP</a>. Spaces beneath roofs are limited, so the cards may need to decide who rests where.</p>
+                  <p>We&rsquo;ll send payment instructions once the realm takes shape, with the base contribution and any surcharge settled separately. Please include the <strong>full name(s)</strong> of who you are paying for. Payment will be due by <span class="gold">1 June 2026</span>.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="the-satchel">
+          <div class="card-border">
+            <svg class="card-corner tl" viewBox="0 0 60 60" aria-hidden="true"><path d="M2 2 L58 2 M2 2 L2 58" stroke="#d4a857" stroke-width="1" fill="none"/><path d="M6 6 L54 6 M6 6 L6 54" stroke="#d4a857" stroke-width="0.5" fill="none" opacity="0.6"/><circle cx="10" cy="10" r="1.5" fill="#d4a857"/><path d="M14 10 L26 10 M10 14 L10 26" stroke="#d4a857" stroke-width="0.5"/><path d="M18 10 L20 8 L22 10 L20 12 Z" fill="#d4a857" opacity="0.7"/><path d="M10 18 L12 16 L14 18 L12 20 Z" fill="#d4a857" opacity="0.7"/></svg>
+            <svg class="card-corner tr" viewBox="0 0 60 60" aria-hidden="true"><path d="M58 2 L2 2 M58 2 L58 58" stroke="#d4a857" stroke-width="1" fill="none"/><path d="M54 6 L6 6 M54 6 L54 54" stroke="#d4a857" stroke-width="0.5" fill="none" opacity="0.6"/><circle cx="50" cy="10" r="1.5" fill="#d4a857"/><path d="M46 10 L34 10 M50 14 L50 26" stroke="#d4a857" stroke-width="0.5"/><path d="M42 10 L40 8 L38 10 L40 12 Z" fill="#d4a857" opacity="0.7"/><path d="M50 18 L48 16 L46 18 L48 20 Z" fill="#d4a857" opacity="0.7"/></svg>
+            <svg class="card-corner bl" viewBox="0 0 60 60" aria-hidden="true"><path d="M2 58 L58 58 M2 58 L2 2" stroke="#d4a857" stroke-width="1" fill="none"/><path d="M6 54 L54 54 M6 54 L6 6" stroke="#d4a857" stroke-width="0.5" fill="none" opacity="0.6"/><circle cx="10" cy="50" r="1.5" fill="#d4a857"/></svg>
+            <svg class="card-corner br" viewBox="0 0 60 60" aria-hidden="true"><path d="M58 58 L2 58 M58 58 L58 2" stroke="#d4a857" stroke-width="1" fill="none"/><path d="M54 54 L6 54 M54 54 L54 6" stroke="#d4a857" stroke-width="0.5" fill="none" opacity="0.6"/><circle cx="50" cy="50" r="1.5" fill="#d4a857"/></svg>
+            <div class="card-head">
+              <svg class="div-svg" viewBox="0 0 200 16" aria-hidden="true"><line x1="0" y1="8" x2="86" y2="8" stroke="currentColor" stroke-width="0.6"/><path d="M100 0 L102 7 L109 8 L102 9 L100 16 L98 9 L91 8 L98 7 Z" fill="currentColor"/><line x1="114" y1="8" x2="200" y2="8" stroke="currentColor" stroke-width="0.6"/></svg>
+              <h2 class="card-title">The Satchel</h2>
+            </div>
+            <div class="card-body">
+              <div class="section-prose">
+                <p>Bring your personal belongings, your best attitude, and whatever you need to sleep, swim, feast, dress up, and wander between worlds.</p>
+                <div class="bring-grid">
+                  <div>
+                    <h4>Essentials</h4>
+                    <ul class="bullets">
+                      <li><strong>If sleeping in a bed:</strong> linens, duvet cover, pillow cover</li>
+                      <li><strong>If sleeping on the cabin floor:</strong> a mattress and sleeping bag</li>
+                      <li><strong>If camping:</strong> tent, mattress, sleeping bag</li>
+                      <li>A homemade dish to share at Friday&rsquo;s midsummer lunch</li>
+                      <li>Swimsuit and towel</li>
+                      <li>Sunscreen and mosquito spray</li>
+                      <li>Warm layers for the night</li>
+                      <li>Shoes for grass, gravel, and dancing</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4>For the Arcana</h4>
+                    <ul class="bullets">
+                      <li>Fabulous outfits</li>
+                      <li>A white look for midsummer day</li>
+                      <li>Decorations, blankets, props, symbols, or other fun things for the party</li>
+                      <li>Drinks and contributions for the bar</li>
+                      <li>Party supplies</li>
+                      <li>An instrument, song, game, reading, ritual, or performance</li>
+                      <li>Anything small and magical you feel called to bring</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section closing-cta">
+          <svg class="div-svg" viewBox="0 0 200 16" aria-hidden="true"><line x1="0" y1="8" x2="86" y2="8" stroke="currentColor" stroke-width="0.6"/><path d="M100 0 L102 7 L109 8 L102 9 L100 16 L98 9 L91 8 L98 7 Z" fill="currentColor"/><line x1="114" y1="8" x2="200" y2="8" stroke="currentColor" stroke-width="0.6"/></svg>
+          <p class="closing-cta-lead">The deck awaits your answer.</p>
+          <a class="cta-link" href="https://forms.gle/rsygitJ4sSk2fLrV6" target="_blank" rel="noopener noreferrer">
+            RSVP to the Arcana
+            <svg viewBox="0 0 24 12" aria-hidden="true" class="cta-link-flair"><line x1="0" y1="6" x2="14" y2="6" stroke="currentColor" stroke-width="0.8"/><path d="M14 2 L20 6 L14 10 Z" fill="currentColor"/></svg>
+          </a>
+        </section>
+
+        <footer class="foot">
+          <div class="foot-image">
+            <img src="/assets/footer-banner.jpg" alt="Costumed figures dancing around a midsummer pole at twilight" />
+          </div>
+        </footer>
+      </div>
+    </main>
+  </div>
+  <script src="/script.js" defer></script>
+</body>
+</html>
