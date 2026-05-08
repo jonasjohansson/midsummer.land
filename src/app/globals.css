@@ -423,13 +423,28 @@ body {
 }
 .intro-stamp {
   font-family: var(--font-stamp);
-  font-size: 12px;
+  font-size: var(--text-xs);
   letter-spacing: var(--tracking-stamp);
   text-transform: uppercase;
   color: var(--gold-soft);
-  margin: 14px 0 0 !important;
+  margin: 0 0 var(--space-3) !important;
   font-style: normal;
 }
+
+.summons {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto var(--space-7);
+}
+.summons .intro-lead {
+  font-family: var(--font-prose);
+  font-size: var(--text-lg);
+  color: var(--cream);
+  font-style: italic;
+  margin: 0 !important;
+  text-indent: 0 !important;
+}
+.summons .intro-lead * { font-style: inherit; }
 .intro-note {
   font-family: var(--font-prose);
   font-style: italic;

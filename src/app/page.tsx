@@ -53,6 +53,13 @@ export default function Home() {
         style={{ marginTop: `${-2 - Math.min(scroll * 0.12, 140)}px` }}
       >
         <div className="main-inner">
+          <section className="summons">
+            <p className="intro-stamp">A personal invitation</p>
+            <p className="intro-lead">
+              On the <span className="gold">19th of June</span>, a portal opens to a liminal space, accessible only to those willing to step through. And you have been summoned.
+            </p>
+          </section>
+
           <CardSection
             id="the-arcana"
             title="The Arcana"
@@ -67,10 +74,6 @@ export default function Home() {
             frameless
             divider="moon"
           >
-            <p className="intro-stamp">A personal invitation</p>
-            <p className="intro-lead">
-              On the <span className="gold">19th of June</span>, a portal opens to a liminal space, accessible only to those willing to step through. And you have been summoned.
-            </p>
             <p>This is our <span className="gold">seventh</span> midsummer together.</p>
             <p>
               What began as a small gathering of friends has become a tradition: a weekend shaped by friendship, music, food, games, swimming, dancing, performances, late nights, collective imagination, and the strange magic that happens when everyone adds something of their own.
