@@ -43,7 +43,6 @@
   const heroEyebrow = document.getElementById("hero-eyebrow");
   const heroText = document.getElementById("hero-text");
   const main = document.getElementById("main");
-  const scrollArrow = document.getElementById("scroll-arrow");
   const sectionNav = document.getElementById("section-nav");
 
   let scrollY = 0;
@@ -55,7 +54,6 @@
     if (heroEyebrow) heroEyebrow.style.transform = `translate(-50%, ${y * -0.12}px)`;
     if (heroText) heroText.style.transform = `translate(-50%, calc(-50% + ${y * -0.18}px))`;
     if (main) main.style.marginTop = `${-2 - Math.min(y * 0.12, 140)}px`;
-    if (scrollArrow) scrollArrow.style.opacity = String(Math.max(0, 0.6 - y * 0.004));
     for (const s of stars) {
       s.el.style.setProperty("--py", `${-y * s.depth}px`);
     }
@@ -143,7 +141,7 @@
     track.innerHTML = doubled
       .map(
         (id, i) =>
-          `<div class="inspiration-item" data-index="${i}"><img src="assets/mood/${id}.jpg" alt="Outfit inspiration" class="inspiration-img" draggable="false" /></div>`
+          `<div class="inspiration-item" data-index="${i}"><picture><source type="image/webp" srcset="assets/mood/${id}.webp" /><img src="assets/mood/${id}.jpg" alt="Outfit inspiration" class="inspiration-img" draggable="false" loading="lazy" decoding="async" /></picture></div>`
       )
       .join("");
 
