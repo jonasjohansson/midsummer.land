@@ -103,6 +103,80 @@
     audio.addEventListener("play", () => setState(true));
   }
 
+  // ───────── Tarot cards (idle 3D wobble + hover tilt + fade-in) ─────────
+  const cards = document.querySelectorAll(".tarot-card");
+  if (cards.length) {
+    const visibilityObserver = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) entry.target.classList.add("tarot-visible");
+        }
+      },
+      { threshold: 0.5, rootMargin: "-10% 0px -10% 0px" }
+    );
+
+    const animatedCards = [];
+    cards.forEach((card) => {
+      visibilityObserver.observe(card);
+      const inner = card.querySelector(".tarot-card-inner");
+      const shine = card.querySelector(".tarot-shine");
+      if (!inner) return;
+      const state = {
+        card,
+        inner,
+        shine,
+        base: Math.random() * 1000,
+        idleX: 0,
+        idleY: 0,
+        hovering: false,
+        leaveTimer: null,
+      };
+      animatedCards.push(state);
+
+      card.addEventListener("mouseenter", () => {
+        state.hovering = true;
+        inner.style.transition = "transform 0.4s cubic-bezier(0.2, 0.6, 0.3, 1)";
+        clearTimeout(state.leaveTimer);
+        state.leaveTimer = setTimeout(() => { inner.style.transition = "none"; }, 400);
+      });
+
+      card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width;
+        const y = (e.clientY - rect.top) / rect.height;
+        const rotY = (x - 0.5) * 30;
+        const rotX = (0.5 - y) * 30;
+        inner.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+        if (shine) {
+          shine.style.opacity = "1";
+          shine.style.background = `radial-gradient(circle at ${x * 100}% ${y * 100}%, rgba(255,240,200,0.35) 0%, rgba(255,220,160,0.15) 30%, transparent 70%)`;
+        }
+      });
+
+      card.addEventListener("mouseleave", () => {
+        inner.style.transition = "transform 0.8s cubic-bezier(0.2, 0.6, 0.3, 1)";
+        inner.style.transform = `rotateX(${state.idleX}deg) rotateY(${state.idleY}deg)`;
+        if (shine) shine.style.opacity = "0";
+        setTimeout(() => { state.hovering = false; }, 800);
+      });
+    });
+
+    const animateCards = (time) => {
+      const t = time * 0.001;
+      for (const s of animatedCards) {
+        if (!s.card.classList.contains("tarot-visible")) continue;
+        const b = s.base;
+        s.idleX = Math.sin(t * 0.7 + b) * 8 + Math.sin(t * 1.3 + b * 2) * 4 + Math.sin(t * 0.3 + b * 0.5) * 3;
+        s.idleY = Math.cos(t * 0.5 + b) * 10 + Math.cos(t * 1.1 + b * 3) * 4 + Math.cos(t * 0.2 + b * 1.5) * 3;
+        if (!s.hovering) {
+          s.inner.style.transform = `rotateX(${s.idleX}deg) rotateY(${s.idleY}deg)`;
+        }
+      }
+      requestAnimationFrame(animateCards);
+    };
+    requestAnimationFrame(animateCards);
+  }
+
   // ───────── Inspiration carousel ─────────
   const MOOD_IMAGES = [
     "18cfd6e1029db36f3342a84e535e1553",

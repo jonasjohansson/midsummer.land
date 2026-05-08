@@ -944,6 +944,14 @@ html { scroll-behavior: smooth; }
   width: 100%;
   aspect-ratio: 5 / 7;
   position: relative;
+  perspective: 800px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.6s cubic-bezier(0.2, 0.6, 0.3, 1), transform 1.6s cubic-bezier(0.2, 0.6, 0.3, 1);
+}
+.tarot-card.tarot-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 .tarot-card-inner {
   position: relative;
@@ -956,11 +964,31 @@ html { scroll-behavior: smooth; }
   display: flex;
   flex-direction: column;
   align-items: center;
+  transform-style: preserve-3d;
+  will-change: transform;
   box-shadow:
     0 0 0 1px rgba(212, 168, 87, 0.15),
     inset 0 0 0 5px rgba(212, 168, 87, 0.25),
     0 12px 30px rgba(20, 10, 30, 0.5);
+  transition: box-shadow 0.4s ease;
 }
+.tarot-card:hover .tarot-card-inner {
+  box-shadow:
+    0 0 0 1px rgba(212, 168, 87, 0.25),
+    inset 0 0 0 5px rgba(212, 168, 87, 0.35),
+    0 24px 60px rgba(20, 10, 30, 0.65);
+}
+.tarot-shine {
+  position: absolute;
+  inset: 0;
+  border-radius: 13px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  mix-blend-mode: overlay;
+  z-index: 10;
+}
+[data-slot="traveller"] .tarot-shine { border-radius: 17px; }
 .tarot-card-has-image {
   padding: 0;
   overflow: hidden;
