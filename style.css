@@ -141,19 +141,19 @@ body {
 .hero-text {
   position: absolute;
   left: 50%;
-  top: 38%;
+  top: 50%;
   transform: translate(-50%, -50%);
   z-index: 4;
   text-align: center;
-  padding: 0 24px;
+  padding: 0 var(--space-5);
   color: var(--hero-ink-soft);
-  width: min(80%, 900px);
+  width: min(64%, 760px);
   will-change: transform;
 }
 .hero-eyebrow {
   position: absolute;
   left: 50%;
-  top: 14%;
+  top: 8%;
   transform: translateX(-50%);
   font-family: var(--font-stamp);
   font-size: clamp(14px, 1.4vw, 18px);
@@ -186,7 +186,7 @@ body {
 .hero-title {
   font-family: var(--font-stamp);
   font-weight: 700;
-  font-size: clamp(56px, 10vw, 156px);
+  font-size: clamp(72px, 9.5vw, 152px);
   line-height: 0.88;
   letter-spacing: 0.01em;
   margin: 0;
@@ -945,13 +945,6 @@ html { scroll-behavior: smooth; }
   aspect-ratio: 5 / 7;
   position: relative;
   perspective: 800px;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1.6s cubic-bezier(0.2, 0.6, 0.3, 1), transform 1.6s cubic-bezier(0.2, 0.6, 0.3, 1);
-}
-.tarot-card.tarot-visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 .tarot-card-inner {
   position: relative;

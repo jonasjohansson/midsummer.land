@@ -103,21 +103,11 @@
     audio.addEventListener("play", () => setState(true));
   }
 
-  // ───────── Tarot cards (idle 3D wobble + hover tilt + fade-in) ─────────
+  // ───────── Tarot cards (idle 3D wobble + hover tilt) ─────────
   const cards = document.querySelectorAll(".tarot-card");
   if (cards.length) {
-    const visibilityObserver = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) entry.target.classList.add("tarot-visible");
-        }
-      },
-      { threshold: 0.5, rootMargin: "-10% 0px -10% 0px" }
-    );
-
     const animatedCards = [];
     cards.forEach((card) => {
-      visibilityObserver.observe(card);
       const inner = card.querySelector(".tarot-card-inner");
       const shine = card.querySelector(".tarot-shine");
       if (!inner) return;
@@ -164,7 +154,6 @@
     const animateCards = (time) => {
       const t = time * 0.001;
       for (const s of animatedCards) {
-        if (!s.card.classList.contains("tarot-visible")) continue;
         const b = s.base;
         s.idleX = Math.sin(t * 0.7 + b) * 8 + Math.sin(t * 1.3 + b * 2) * 4 + Math.sin(t * 0.3 + b * 0.5) * 3;
         s.idleY = Math.cos(t * 0.5 + b) * 10 + Math.cos(t * 1.1 + b * 3) * 4 + Math.cos(t * 0.2 + b * 1.5) * 3;
