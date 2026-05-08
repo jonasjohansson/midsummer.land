@@ -60,7 +60,8 @@
     const showNav = y > window.innerHeight * 0.7;
     if (sectionNav) {
       sectionNav.classList.toggle("section-nav-visible", showNav);
-      sectionNav.setAttribute("aria-hidden", showNav ? "false" : "true");
+      if (showNav) sectionNav.removeAttribute("inert");
+      else sectionNav.setAttribute("inert", "");
     }
     ticking = false;
   }

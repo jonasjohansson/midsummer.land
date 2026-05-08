@@ -15,9 +15,9 @@
   <meta name="twitter:title" content="Midsummerland 2026" />
   <meta name="twitter:description" content="A dream drawn by fate. 19 to 21 June 2026, Vibäck, Nyköping." />
   <meta name="twitter:image" content="https://midsummer.land/assets/og-image.jpg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Cinzel:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Bodoni+Moda:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="assets/header-banner.webp" type="image/webp" media="(min-width: 721px)" />
+  <link rel="preload" as="image" href="assets/header-banner-mobile.webp" type="image/webp" media="(max-width: 720px)" />
+  <link rel="stylesheet" href="fonts/fonts.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -66,7 +66,7 @@
       </div>
     </header>
 
-    <div class="section-nav" id="section-nav" aria-hidden="true">
+    <div class="section-nav" id="section-nav" inert>
       <div class="section-nav-inner">
         <nav class="section-nav-list-wrap" aria-label="Sections">
           <ul class="section-nav-list">
@@ -313,7 +313,7 @@
                 <p>Bring your personal belongings, your best attitude, and whatever you need to sleep, swim, feast, dress up, and wander between worlds.</p>
                 <div class="bring-grid">
                   <div>
-                    <h4>Essentials</h4>
+                    <h3>Essentials</h3>
                     <ul class="bullets">
                       <li><strong>If sleeping in a bed:</strong> linens, duvet cover, pillow cover</li>
                       <li><strong>If sleeping on the cabin floor:</strong> a mattress and sleeping bag</li>
@@ -326,7 +326,7 @@
                     </ul>
                   </div>
                   <div>
-                    <h4>For the Arcana</h4>
+                    <h3>For the Arcana</h3>
                     <ul class="bullets">
                       <li>Fabulous outfits</li>
                       <li>A white look for midsummer day</li>

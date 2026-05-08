@@ -929,7 +929,7 @@ html { scroll-behavior: smooth; }
   text-align: left;
   margin-bottom: 0;
 }
-.bring-grid h4 {
+.bring-grid h3 {
   font-family: var(--font-prose);
   font-style: italic;
   font-weight: 500;
@@ -1514,7 +1514,7 @@ html { scroll-behavior: smooth; }
     overflow-wrap: break-word;
   }
   .card-head { text-align: center; }
-  .bring-grid h4 { text-align: center; }
+  .bring-grid h3 { text-align: center; }
 
   .location-image { display: none; }
   [data-slot="realm"] { display: block; }
