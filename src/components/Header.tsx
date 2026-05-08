@@ -22,7 +22,7 @@ export default function Header() {
           {}
           <img
             src="/assets/header-banner.jpg"
-            alt="Bangers' Arcana — sun and moon at twilight"
+            alt="Bangers' Arcana, sun and moon at twilight"
             className="hero-img"
             style={{
               transform: `translateY(${scroll * 0.08}px)`,
@@ -91,9 +91,21 @@ export default function Header() {
           </div>
           <p className="hero-sub">A dream drawn by fate</p>
           <div className="hero-details">
-            <p>19 — 21 June 2026</p>
+            <p>19 to 21 June 2026</p>
             <p>Vibäck, Nyköping</p>
           </div>
+          <a
+            className="hero-cta"
+            href="https://forms.gle/rsygitJ4sSk2fLrV6"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>RSVP to the Arcana</span>
+            <svg viewBox="0 0 24 12" aria-hidden="true" className="hero-cta-flair">
+              <line x1="0" y1="6" x2="14" y2="6" stroke="currentColor" strokeWidth="0.8"/>
+              <path d="M14 6 L20 2 L20 10 Z" fill="currentColor"/>
+            </svg>
+          </a>
         </div>
       </div>
     </header>

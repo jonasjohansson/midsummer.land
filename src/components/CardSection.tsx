@@ -12,9 +12,10 @@ interface TarotProps {
 }
 
 interface CardSectionProps {
+  id?: string;
   numeral?: string;
   title: string;
-  subtitle: string;
+  subtitle?: string;
   tarot?: TarotProps;
   children: React.ReactNode;
   reverse?: boolean;
@@ -23,9 +24,9 @@ interface CardSectionProps {
   divider?: "star" | "line" | "moon";
 }
 
-export default function CardSection({ numeral, title, subtitle, tarot, children, reverse, wide, frameless, divider }: CardSectionProps) {
+export default function CardSection({ id, numeral, title, subtitle, tarot, children, reverse, wide, frameless, divider }: CardSectionProps) {
   return (
-    <section className={`section ${reverse ? "section-reverse" : ""} ${wide ? "section-wide" : ""} ${frameless ? "section-frameless" : ""}`}>
+    <section id={id} className={`section ${reverse ? "section-reverse" : ""} ${wide ? "section-wide" : ""} ${frameless ? "section-frameless" : ""}`}>
       <CardBorder numeral={numeral} title={title} subtitle={subtitle} divider={divider}>
         {tarot ? (
           <div className="section-grid">

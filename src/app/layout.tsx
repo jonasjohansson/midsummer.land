@@ -33,20 +33,21 @@ const ebGaramond = EB_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "The Arcana — Midsummer 2026",
-  description: "A dream drawn by fate. Midsummer gathering, 19–21 June 2026, Vibäck, Nyköping.",
+  metadataBase: new URL("https://midsummer.land"),
+  title: "Midsummerland 2026",
+  description: "A dream drawn by fate. Midsummer gathering, 19 to 21 June 2026, Vibäck, Nyköping.",
   icons: {
     icon: "/favicon.png",
   },
   openGraph: {
-    title: "The Arcana — Midsummer 2026",
-    description: "A dream drawn by fate. 19–21 June 2026, Vibäck, Nyköping.",
+    title: "Midsummerland 2026",
+    description: "A dream drawn by fate. 19 to 21 June 2026, Vibäck, Nyköping.",
     images: [{ url: "/assets/og-image.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Arcana — Midsummer 2026",
-    description: "A dream drawn by fate. 19–21 June 2026, Vibäck, Nyköping.",
+    title: "Midsummerland 2026",
+    description: "A dream drawn by fate. 19 to 21 June 2026, Vibäck, Nyköping.",
     images: ["/assets/og-image.jpg"],
   },
 };

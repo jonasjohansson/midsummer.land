@@ -4,10 +4,12 @@ import { useState, useEffect } from "react";
 import StarField from "@/components/StarField";
 import Header from "@/components/Header";
 import Intro from "@/components/Intro";
+import SectionNav from "@/components/SectionNav";
 import CardSection from "@/components/CardSection";
-import Form from "@/components/Form";
 import Divider from "@/components/Divider";
 import InspirationCarousel from "@/components/InspirationCarousel";
+
+const RSVP_URL = "https://forms.gle/rsygitJ4sSk2fLrV6";
 
 export default function Home() {
   const [scroll, setScroll] = useState(0);
@@ -20,28 +22,9 @@ export default function Home() {
 
   return (
     <div className="app">
-      <svg width="0" height="0" style={{ position: "absolute" }}>
-        <defs>
-          <filter id="parchment-rough">
-            <feTurbulence
-              type="fractalNoise"
-              baseFrequency="0.04"
-              numOctaves="5"
-              seed="2"
-              result="noise"
-            />
-            <feDisplacementMap
-              in="SourceGraphic"
-              in2="noise"
-              scale="3"
-              xChannelSelector="R"
-              yChannelSelector="G"
-            />
-          </filter>
-        </defs>
-      </svg>
       <StarField density="medium" />
       <Header />
+      <SectionNav rsvpUrl={RSVP_URL} />
 
       <div
         className="scroll-arrow"
@@ -74,8 +57,9 @@ export default function Home() {
           <Intro />
 
           <CardSection
+            id="the-arcana"
             title="The Arcana"
-            subtitle="The world we build together"
+
             tarot={{
               numeral: "",
               name: "The Arcana",
@@ -87,31 +71,18 @@ export default function Home() {
             frameless
             divider="moon"
           >
+            <p>This is our <span className="gold">seventh</span> midsummer together.</p>
             <p>
-              This is our <strong>seventh midsummer</strong> together.
+              What began as a small gathering of friends has become a tradition: a weekend shaped by friendship, music, food, games, swimming, dancing, performances, late nights, collective imagination, and the strange magic that happens when everyone adds something of their own.
             </p>
             <p>
-              What began as a small gathering of friends has become{" "}
-              <strong>a tradition</strong>: a weekend shaped by friendship,
-              music, food, games, swimming, dancing, performances, late nights,
-              collective imagination, and the strange magic that happens when{" "}
-              <strong>everyone adds something of their own</strong>.
+              This year, that world becomes <span className="gold">The Arcana</span>: a midsummer of fate, friendship, symbols, stories, and the space between dream and ritual.
             </p>
             <p>
-              This year, that world becomes{" "}
-              <span className="gold">The Arcana</span>: a midsummer experience
-              of fate, friendship, symbols, stories, and the space between dream
-              and ritual.
-            </p>
-            <p className="callout">
-              It is not something you attend from the outside. It is something
-              we make together, moment by moment, until the ordinary world
-              softens and another world begins to take shape.
+              Our home is <a className="inline-link gold" href="https://viback10.se/" target="_blank" rel="noopener noreferrer">Vibäck 10</a>, a former seaside guesthouse from 1938, tucked into Marsviken where the forest meets the water. For three days we take over its cabins, shore, sauna, paths, and gathering places. Arrive early on Friday and leave late on Sunday.
             </p>
             <p>
-              Welcome to the seventh gathering.
-              <br />
-              <strong>Welcome to the Arcana.</strong>
+              It is not something you attend from the outside. It is something we make together, moment by moment, until the ordinary world softens and another world begins to take shape.
             </p>
           </CardSection>
 
@@ -130,40 +101,10 @@ export default function Home() {
           </div>
 
           <CardSection
+            id="the-offering"
             numeral="I"
-            title="The Realm"
-            subtitle="Vibäck, by water and sky"
-            tarot={{
-              numeral: "I",
-              name: "The Realm",
-              slotId: "realm",
-              hint: "tarot card · the realm",
-              image: "/assets/the-realm.jpg",
-            }}
-            reverse
-          >
-            <p>
-              Our home for the weekend is <strong>Vibäck 10</strong>, a former
-              seaside guesthouse from <span className="gold">1938</span>, tucked
-              into <strong>Marsviken</strong> where the forest meets the water.
-            </p>
-            <p>
-              For <strong>three days</strong>, we take over its cabins, shore,
-              sauna, paths and gathering places.
-            </p>
-            <p className="callout">
-              Arrive early on Friday. Leave late on Sunday.
-            </p>
-            <p>
-              For one weekend, Vibäck becomes the realm of{" "}
-              <span className="gold">The Arcana</span>.
-            </p>
-          </CardSection>
-
-          <CardSection
-            numeral="II"
             title="The Offering"
-            subtitle="How to take part"
+
             tarot={{
               numeral: "II",
               name: "The Offering",
@@ -182,17 +123,19 @@ export default function Home() {
               summon.
             </p>
             <p>
-              Some offerings will be written into the weekend. Others will
-              reveal themselves when the moment calls.
-              <span className="gold"> In the form below</span>,{" "}
-              <strong>tell us what you might bring</strong> into the Arcana.
+              Some offerings will be written into the weekend. Others will reveal themselves when the moment calls. When you{" "}
+              <a className="inline-link" href={RSVP_URL} target="_blank" rel="noopener noreferrer">
+                RSVP
+              </a>
+              , tell us what you might bring into the Arcana.
             </p>
           </CardSection>
 
           <CardSection
-            numeral="III"
+            id="the-masquerade"
+            numeral="II"
             title="The Masquerade"
-            subtitle="Dress as the card you wish to draw"
+
             tarot={{
               numeral: "III",
               name: "The Masquerade",
@@ -216,9 +159,7 @@ export default function Home() {
               a sign, or something no deck has named before.
             </p>
             <p>
-              <strong>Bring fabric, flowers, masks, symbols, props</strong>,
-              movement, mystery. The world becomes richer when everyone adds to
-              the illusion.
+              Bring fabric, flowers, masks, symbols, props, movement, mystery. The world becomes richer when everyone adds to the illusion.
             </p>
             <p className="muted">
               Decorations are welcome too. If you have an object, banner,
@@ -353,9 +294,10 @@ export default function Home() {
           />
 
           <CardSection
-            numeral="IV"
+            id="the-traveller"
+            numeral="III"
             title="The Traveller"
-            subtitle="The path that leads through the veil"
+
             tarot={{
               numeral: "IV",
               name: "The Traveller",
@@ -372,23 +314,23 @@ export default function Home() {
             </p>
             <ul className="bullets">
               <li>
-                <strong>Car</strong> — easiest. Parking by the cabin.
+                <strong>Car.</strong> Easiest, with parking by the cabin.
               </li>
               <li>
-                <strong>Train</strong> — to Nyköping C, then a{" "}
+                <strong>Train.</strong> To Nyköping C, then a{" "}
                 <span className="gold">25 min</span> taxi or pickup.
               </li>
               <li>
-                <strong>Carpool</strong> — share the journey; we&apos;ll match
-                drivers and pilgrims as the date approaches.
+                <strong>Carpool.</strong> Closer to the date we&apos;ll open a shared chat where drivers and travellers can find each other. More details to follow.
               </li>
             </ul>
           </CardSection>
 
           <CardSection
-            numeral="V"
+            id="the-feast"
+            numeral="IV"
             title="The Feast"
-            subtitle="The midsummer table is set"
+
             tarot={{
               numeral: "V",
               name: "The Feast",
@@ -399,37 +341,29 @@ export default function Home() {
             reverse
           >
             <p>
-              Across the weekend, the Arcana will provide ingredients for{" "}
-              <strong>shared meals</strong>, which we will prepare together in{" "}
-              <strong>kitchen teams</strong>.
+              Across the weekend, the Arcana provides the ingredients and recipes for shared meals. Food teams take turns in the kitchen, cooking them together.
             </p>
             <p className="callout">
-              The main feast is Friday&apos;s midsummer lunch. Everyone is
-              invited to bring one dish to share.
+              The main feast is Friday&apos;s midsummer lunch. Everyone is invited to bring one dish to share.
             </p>
             <p>
-              Something traditional, beloved, strange, seasonal, or simply
-              delicious. The shared menu will be built around{" "}
-              <strong>vegetarian food</strong>, but if your personal prophecy
-              requires meat, you are welcome to bring it yourself.
+              Something traditional, beloved, strange, seasonal, or simply delicious. The shared menu will be built around <strong>vegetarian food</strong>, but if your personal prophecy requires meat, you are welcome to bring it yourself.
             </p>
             <p>
-              There will also be a <strong>magical bar experience</strong>, with
-              some drinks provided by the house. Please{" "}
-              <span className="gold">bring offerings for the bar</span>:
-              bottles, mixers, garnishes, strange spirits, soft drinks, or
-              anything you would like to see appear in the cup.
+              There will also be a magical bar experience, with some drinks provided by the house. Please bring offerings for the bar: bottles, mixers, garnishes, strange spirits, soft drinks, or anything you would like to see appear in the cup.
             </p>
-            <p className="muted">
-              Mark your dietary needs in the form so the feast can welcome
-              everyone.
+            <p>
+              Mark your dietary needs in the{" "}
+              <a className="inline-link" href={RSVP_URL} target="_blank" rel="noopener noreferrer">RSVP</a>{" "}
+              so the feast can welcome everyone.
             </p>
           </CardSection>
 
           <CardSection
-            numeral="VI"
+            id="the-coin"
+            numeral="V"
             title="The Coin"
-            subtitle="How we keep the world turning"
+
             tarot={{
               numeral: "VI",
               name: "The Coin",
@@ -439,81 +373,56 @@ export default function Home() {
             }}
           >
             <p>
-              The Arcana is built together, and the cost is{" "}
-              <strong>shared between everyone</strong> who enters the realm.
+              The Arcana is built together. The contribution is <span className="gold">1400 SEK</span> per person for the event itself, which covers <a className="inline-link" href="https://viback10.se/" target="_blank" rel="noopener noreferrer">Vibäck</a>, shared meals, the bar, decorations, the circus tent, lights, sound, and the materials that bring the weekend to life. A roof or a bed adds a small surcharge on top.
             </p>
-            <p>
-              The coin covers Vibäck, shared meals,{" "}
-              <strong>the bar experience</strong>, decorations, a circus tent,
-              lights, sound, and the materials needed to bring the weekend to
-              life.
-            </p>
-            <p className="callout">Choose your path of rest:</p>
             <ul className="bullets">
               <li>
-                <strong>
-                  <span className="gold">1400 SEK</span> — The Field of Dreams
-                </strong>
-                <br />A place beneath your own tent
+                <strong>Tent · <span className="gold">Free</span></strong>
+                <br />A place beneath your own tent.
               </li>
               <li>
-                <strong>
-                  <span className="gold">1800 SEK</span> — The Cabin Floor
-                </strong>
-                <br />A roof above, a sleeping mat below
+                <strong>Floor · <span className="gold">400 SEK</span></strong>
+                <br />A roof above, a sleeping mat below.
               </li>
               <li>
-                <strong>
-                  <span className="gold">2200 SEK</span> — The Chosen Bed
-                </strong>
-                <br />A bed within the cabin walls
+                <strong>Bed · <span className="gold">800 SEK</span></strong>
+                <br />A bed within the cabin walls.
               </li>
             </ul>
-            <p className="muted">
-              Mark your preference in the form. Spaces beneath roofs are
-              limited, so the cards may need to decide.
+            <p>
+              <a className="inline-link" href="https://viback10.se/" target="_blank" rel="noopener noreferrer">Vibäck</a> holds eight cabins, with room for about <span className="gold">40 people in beds</span> and <span className="gold">15 on the floor</span>. Each cabin has its own toilet and kitchen, which others may pass through to use, and a separate service house holds two more toilets and showers. Beyond the cabins, the realm opens into forest and shore with plenty of room for tents and trees for hammocks. Camping is the easiest way in and the most generous in space.
             </p>
             <p>
-              Swish to <strong>072-161 50 63</strong> (Jonas Johansson) and
-              include the name(s) you are paying for.
+              Indicate your preferred sleeping option in the{" "}
+              <a className="inline-link" href={RSVP_URL} target="_blank" rel="noopener noreferrer">RSVP</a>. Spaces beneath roofs are limited, so the cards may need to decide who rests where.
             </p>
             <p>
-              If you do not have Swish, get someone to pay for you and make
-              sure they include your name. Please refrain from using Swish
-              cards. If you do not have Swish and it&apos;s complicated getting
-              someone to help you, you can make a bank transfer to:<br />
-              <strong>Falkenbergs Sparbank</strong><br />
-              <strong>Clearing: 8060-6</strong><br />
-              <strong>Account: 114 710 287-3</strong><br />
-              <strong>IBAN: SE7580000806061147102873</strong><br />
-              <strong>BIC: SWEDSESS</strong>
-            </p>
-            <p className="callout">
-              Payment is due by <span className="gold">1 June 2026</span>.
+              We&apos;ll send payment instructions once the realm takes shape, with the base contribution and any surcharge settled separately. Please include the <strong>full name(s)</strong> of who you are paying for. Payment will be due by <span className="gold">1 June 2026</span>.
             </p>
           </CardSection>
 
           <CardSection
+            id="the-satchel"
             title="The Satchel"
-            subtitle="What to carry across the threshold"
+
           >
             <p>
-              Bring your personal belongings, your best attitude, and whatever
-              you need to{" "}
-              <strong>
-                sleep, swim, feast, dress up, and wander between worlds
-              </strong>
-              .
+              Bring your personal belongings, your best attitude, and whatever you need to sleep, swim, feast, dress up, and wander between worlds.
             </p>
             <div className="bring-grid">
               <div>
                 <h4>Essentials</h4>
                 <ul className="bullets">
-                  <li>Bedding or sleeping bag</li>
-                  <li>Tent, if you are camping</li>
                   <li>
-                    Homemade potluck dish for Friday&apos;s midsummer lunch
+                    <strong>If sleeping in a bed:</strong> linens, duvet cover, pillow cover
                   </li>
+                  <li>
+                    <strong>If sleeping on the cabin floor:</strong> a mattress and sleeping bag
+                  </li>
+                  <li>
+                    <strong>If camping:</strong> tent, mattress, sleeping bag
+                  </li>
+                  <li>A homemade dish to share at Friday&apos;s midsummer lunch</li>
                   <li>Swimsuit and towel</li>
                   <li>Sunscreen and mosquito spray</li>
                   <li>Warm layers for the night</li>
@@ -540,9 +449,21 @@ export default function Home() {
             </div>
           </CardSection>
 
-          <section className="section form-section">
-            <div className="parchment-edge" aria-hidden="true" />
-            <Form />
+          <section className="section closing-cta">
+            <Divider variant="star" />
+            <p className="closing-cta-lead">The deck awaits your answer.</p>
+            <a
+              className="cta-link"
+              href={RSVP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              RSVP to the Arcana
+              <svg viewBox="0 0 24 12" aria-hidden="true" className="cta-link-flair">
+                <line x1="0" y1="6" x2="14" y2="6" stroke="currentColor" strokeWidth="0.8"/>
+                <path d="M14 6 L20 2 L20 10 Z" fill="currentColor"/>
+              </svg>
+            </a>
           </section>
 
           <footer className="foot">
@@ -552,13 +473,6 @@ export default function Home() {
                 src="/assets/footer-banner.jpg"
                 alt="Costumed figures dancing around a midsummer pole at twilight"
               />
-              <div className="foot-text">
-                <Divider variant="star" />
-                <p>Midsummerland · Bangers&apos; Arcana · 19 — 21 June 2026</p>
-                <p className="muted">
-                  A dream drawn by fate · Vibäck 10, Nyköping
-                </p>
-              </div>
             </div>
           </footer>
         </div>
