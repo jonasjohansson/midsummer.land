@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import AudioToggle from "./AudioToggle";
 
 export default function Header() {
   const [scroll, setScroll] = useState(0);
@@ -106,6 +107,7 @@ export default function Header() {
               <path d="M14 6 L20 2 L20 10 Z" fill="currentColor"/>
             </svg>
           </a>
+          <AudioToggle />
         </div>
       </div>
     </header>
