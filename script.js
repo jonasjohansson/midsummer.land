@@ -143,7 +143,7 @@
     track.innerHTML = doubled
       .map(
         (id, i) =>
-          `<div class="inspiration-item" data-index="${i}"><img src="/assets/mood/${id}.jpg" alt="Outfit inspiration" class="inspiration-img" draggable="false" /></div>`
+          `<div class="inspiration-item" data-index="${i}"><img src="assets/mood/${id}.jpg" alt="Outfit inspiration" class="inspiration-img" draggable="false" /></div>`
       )
       .join("");
 
