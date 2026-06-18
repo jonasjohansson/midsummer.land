@@ -646,6 +646,17 @@ html { scroll-behavior: smooth; }
   object-fit: contain;
   margin: 0 auto;
 }
+.map-image {
+  text-align: center;
+}
+.map-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin: 0 auto;
+  border-radius: var(--radius-md);
+}
 [data-slot="realm"] { display: none; }
 .section-reverse .section-grid:has([data-slot="realm"]) {
   display: block;
